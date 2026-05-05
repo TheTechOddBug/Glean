@@ -313,6 +313,12 @@ predicate CallbackImplementation :
   Impl = erlang.FunctionDeclaration
     { fqn = { module = ModName, name = CbName, arity = CbArity } };
 
+predicate AppInfo :
+  {
+    name : string,
+    type_ : enum { FirstParty | Otp | ThirdParty },
+  }
+
 ## Types
 
 type Declaration =
