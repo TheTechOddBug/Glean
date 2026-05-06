@@ -1200,4 +1200,190 @@ mod tests {
              fall back to the descriptor-derived SkVariable."
         );
     }
+
+    #[test]
+    fn test_same_path_documents_merge_occurrences() {
+        // SCIP allows multiple Documents to share the same `relative_path`;
+        // indexers may split a single file's data across multiple Documents
+        // to stay under protobuf's 2 GB serialization limit (in particular,
+        // writeScipIndexChunks in fbcode/swift_devx/glean-indexer/scip/SCIPExporter.cpp).
+        // This test pins down that the consumer merges them: src.File and
+        // src.FileLines are emitted once, but every Document's occurrences
+        // contribute scip.FileRange facts.
+        let mut scip_file = NamedTempFile::new().expect("unable to create temp file");
+        let output_json = NamedTempFile::new().expect("unable to create temp file");
+
+        let mut index = Index::new();
+
+        // First Document: carries the file text + first occurrence.
+        let mut doc_first = Document::new();
+        doc_first.relative_path = "shared.swift".to_string();
+        doc_first.language = "swift".to_string();
+        doc_first.text = "let a = 1\nlet b = 2\n".to_string();
+        let mut occ_first = ScipOccurrence::new();
+        occ_first.symbol = "scip-swift . . . `shared`/a.".to_string();
+        occ_first.range = vec![0, 4, 5];
+        occ_first.symbol_roles = 1; // Definition
+        doc_first.occurrences.push(occ_first);
+        index.documents.push(doc_first);
+
+        // Second Document: same path, second occurrence (no text -- the
+        // file metadata was already emitted from the first Document).
+        let mut doc_second = Document::new();
+        doc_second.relative_path = "shared.swift".to_string();
+        doc_second.language = "swift".to_string();
+        let mut occ_second = ScipOccurrence::new();
+        occ_second.symbol = "scip-swift . . . `shared`/b.".to_string();
+        occ_second.range = vec![1, 4, 5];
+        occ_second.symbol_roles = 1; // Definition
+        doc_second.occurrences.push(occ_second);
+        index.documents.push(doc_second);
+
+        write_scip_index_full(&mut scip_file, index);
+        build_json(build_args(
+            scip_file.path().to_path_buf(),
+            output_json.path().to_path_buf(),
+        ))
+        .expect("failure building JSON");
+        let output = std::fs::read_to_string(output_json.path()).expect("unable to read output");
+
+        // src.File should be emitted exactly once -- the second same-path
+        // Document must NOT register a new src.File fact.
+        let src_files = find_predicate_facts(&output, "src.File.1")
+            .expect("src.File.1 not found")
+            .as_array()
+            .expect("src.File facts should be array")
+            .len();
+        assert_eq!(
+            src_files, 1,
+            "expected exactly one src.File fact, got {}",
+            src_files
+        );
+
+        // src.FileLines is per-file metadata -- also exactly once.
+        let file_lines = find_predicate_facts(&output, "src.FileLines.1")
+            .expect("src.FileLines.1 not found")
+            .as_array()
+            .expect("src.FileLines facts should be array")
+            .len();
+        assert_eq!(
+            file_lines, 1,
+            "expected exactly one src.FileLines fact, got {}",
+            file_lines
+        );
+
+        // Both occurrences must contribute to scip.FileRange. Without merge
+        // semantics, the second Document's occurrence would be silently
+        // dropped and we would see only one FileRange.
+        let file_ranges = find_predicate_facts(&output, "scip.FileRange.1")
+            .expect("scip.FileRange.1 not found")
+            .as_array()
+            .expect("scip.FileRange facts should be array")
+            .len();
+        assert_eq!(
+            file_ranges, 2,
+            "expected one scip.FileRange per occurrence across both Documents, got {}",
+            file_ranges
+        );
+
+        // Both symbols should be present -- one from each Document.
+        let symbols = find_predicate_facts(&output, "scip.Symbol.1")
+            .expect("scip.Symbol.1 not found")
+            .as_array()
+            .expect("scip.Symbol facts should be array")
+            .len();
+        assert_eq!(
+            symbols, 2,
+            "expected one scip.Symbol per Document, got {}",
+            symbols
+        );
+    }
+
+    #[test]
+    fn test_same_path_documents_merge_n_way() {
+        // Merge must be n-way -- when an indexer splits a single file across
+        // four sibling Documents (rare but legal: writeScipIndexChunks may
+        // chain multiple continuation pieces for very large files), the
+        // consumer must still emit exactly one src.File and contribute every
+        // occurrence.
+        let mut scip_file = NamedTempFile::new().expect("unable to create temp file");
+        let output_json = NamedTempFile::new().expect("unable to create temp file");
+
+        let mut index = Index::new();
+
+        // First doc carries text + first occurrence.
+        let mut first = Document::new();
+        first.relative_path = "huge.swift".to_string();
+        first.language = "swift".to_string();
+        first.text = "let a = 1\nlet b = 2\nlet c = 3\nlet d = 4\n".to_string();
+        let mut occ0 = ScipOccurrence::new();
+        occ0.symbol = "scip-swift . . . `huge`/a.".to_string();
+        occ0.range = vec![0, 4, 5];
+        occ0.symbol_roles = 1;
+        first.occurrences.push(occ0);
+        index.documents.push(first);
+
+        // Three continuation docs, one occurrence each, no metadata.
+        for (i, name) in [(1, "b"), (2, "c"), (3, "d")] {
+            let mut cont = Document::new();
+            cont.relative_path = "huge.swift".to_string();
+            cont.language = "swift".to_string();
+            let mut occ = ScipOccurrence::new();
+            occ.symbol = format!("scip-swift . . . `huge`/{}.", name);
+            occ.range = vec![i, 4, 5];
+            occ.symbol_roles = 1;
+            cont.occurrences.push(occ);
+            index.documents.push(cont);
+        }
+
+        write_scip_index_full(&mut scip_file, index);
+        build_json(build_args(
+            scip_file.path().to_path_buf(),
+            output_json.path().to_path_buf(),
+        ))
+        .expect("failure building JSON");
+        let output = std::fs::read_to_string(output_json.path()).expect("unable to read output");
+
+        // Exactly one src.File despite four same-path Documents.
+        let src_files = find_predicate_facts(&output, "src.File.1")
+            .expect("src.File.1 not found")
+            .as_array()
+            .expect("src.File facts should be array")
+            .len();
+        assert_eq!(src_files, 1, "n-way merge must dedupe src.File");
+
+        // Exactly one src.FileLines (per-file metadata, only first doc has text).
+        let file_lines = find_predicate_facts(&output, "src.FileLines.1")
+            .expect("src.FileLines.1 not found")
+            .as_array()
+            .expect("src.FileLines facts should be array")
+            .len();
+        assert_eq!(
+            file_lines, 1,
+            "src.FileLines comes from the first doc only and must not be duplicated"
+        );
+
+        // Every occurrence across all four Documents must contribute.
+        let file_ranges = find_predicate_facts(&output, "scip.FileRange.1")
+            .expect("scip.FileRange.1 not found")
+            .as_array()
+            .expect("scip.FileRange facts should be array")
+            .len();
+        assert_eq!(
+            file_ranges, 4,
+            "expected one scip.FileRange per occurrence across 4 Documents, got {}",
+            file_ranges
+        );
+
+        let symbols = find_predicate_facts(&output, "scip.Symbol.1")
+            .expect("scip.Symbol.1 not found")
+            .as_array()
+            .expect("scip.Symbol facts should be array")
+            .len();
+        assert_eq!(
+            symbols, 4,
+            "expected one scip.Symbol per Document, got {}",
+            symbols
+        );
+    }
 }

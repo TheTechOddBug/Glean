@@ -308,35 +308,50 @@ impl Env {
             return Ok(());
         };
 
-        // Skip files if the same file has already been seen.
-        // Note that this differs from the Haskell version, which does not have this check.
+        // SCIP allows multiple Documents to share the same `relative_path`:
+        // the Index proto comment in third-party/scip/scip.proto says
+        // "Complementary information can be merged together from multiple
+        // sources to provide a unified code intelligence experience". This is
+        // load-bearing for indexers that split a single file's data across
+        // multiple Documents to stay under protobuf's 2 GB serialization limit
+        // -- in particular the Swift SCIP exporter
+        // (writeScipIndexChunks in fbcode/swift_devx/glean-indexer/scip/SCIPExporter.cpp)
+        // emits multiple Documents for the same file when its accumulated
+        // occurrences/symbols approach the limit.
+        //
+        // The previous behavior dropped every Document past the first for a
+        // given path, which silently truncated the resulting Glean facts.
+        // Now we emit the per-file facts (src.File, src.FileLines, file_lang)
+        // only on first sight but always extend the per-file occurrences and
+        // symbols.
         let (src_file_id, already_seen) =
             self.get_or_set_fact(StringPredicate::File, filepath.clone());
-        if already_seen {
-            return Ok(());
+        if !already_seen {
+            self.out.src_file(src_file_id, filepath.clone());
+
+            // Emit src.FileLines: prefer inline document text, fall back to
+            // disk read. FileLines is per-file metadata; emit it once.
+            let doc_text = std::mem::take(&mut doc.text);
+            let file_bytes: Option<Vec<u8>> = if !doc_text.is_empty() {
+                Some(doc_text.into_bytes())
+            } else if let Some(source_root) = source_root {
+                std::fs::read(source_root.join(&doc.relative_path)).ok()
+            } else {
+                None
+            };
+            if let Some(bytes) = file_bytes {
+                let (lengths, ends_in_newline, has_unicode_or_tabs) = compute_file_lines(&bytes);
+                self.out
+                    .file_lines(src_file_id, lengths, ends_in_newline, has_unicode_or_tabs);
+            }
+
+            // file_lang is also per-file metadata; emit it once.
+            let lang_file_id = self.next_id();
+            self.out.file_lang(lang_file_id, src_file_id, lang);
         }
 
-        self.out.src_file(src_file_id, filepath.clone());
-
-        // Emit src.FileLines: prefer inline document text, fall back to disk read
-        let doc_text = std::mem::take(&mut doc.text);
-        let file_bytes: Option<Vec<u8>> = if !doc_text.is_empty() {
-            Some(doc_text.into_bytes())
-        } else if let Some(source_root) = source_root {
-            std::fs::read(source_root.join(&doc.relative_path)).ok()
-        } else {
-            None
-        };
-        if let Some(bytes) = file_bytes {
-            let (lengths, ends_in_newline, has_unicode_or_tabs) = compute_file_lines(&bytes);
-            self.out
-                .file_lines(src_file_id, lengths, ends_in_newline, has_unicode_or_tabs);
-        }
-
-        let lang_file_id = self.next_id();
-
-        self.out.file_lang(lang_file_id, src_file_id, lang);
-
+        // Occurrences and SymbolInformation are additive across same-path
+        // Documents; always process them.
         let mut empty_occ_count = 0;
         for occ in doc.occurrences {
             if occ.symbol.is_empty() {
