@@ -121,8 +121,8 @@ genSchemaPy _version preddefs typedefs oncall =
       let importList = [ "    " <> return_class_name <> ","
               | pred <- preds
               , let ref = predicateDefRef pred
-                    predicateName = predicateRef_name ref
-                    return_class_name = returnPythonClassName predicateName
+                    return_class_name =
+                      returnPythonClassNameFromPolicy namePolicy ref
             ] in
       Text.unlines
         (if null importList then
@@ -182,8 +182,8 @@ genAllPredicates predicateMode _ namePolicy parent preds = Text.unlines $
             "" -> " " <> "_"
             _ -> valueTy class_name AngleForValues namePolicy key
           predicateName = predicateRef_name ref
-          class_name = pythonClassName predicateName
-          return_class_name = returnPythonClassName predicateName
+          class_name = pythonClassNameFromPolicy namePolicy ref
+          return_class_name = returnPythonClassNameFromPolicy namePolicy ref
           addSumTypes = genAllPredicates DummyQuery [Text.empty] namePolicy
             parent $ unionDummyPreds key pred class_name
           anglePredicateAndVersion = case predicateMode of
@@ -211,9 +211,16 @@ genNamedTypesClasses pred types = map genTypePred $
 
 genNamedTypesAliases :: NamePolicy -> [ResolvedTypeDef] -> [Text]
 genNamedTypesAliases namePolicy types = map genTypeAlias $
-  filter (\(_, t, _) -> shouldGenAlias t) $ map genType types
+  filter (\(_, _, t, _) -> shouldGenAlias t) $ map genTypeWithRef types
   where
-    genTypeAlias (n, t, _) = pythonClassName n <> " = " <> baseTy Text.empty namePolicy t
+    genTypeAlias (ref, _, t, _) =
+      pythonTypeNameFromPolicy namePolicy ref <> " = " <>
+      baseTy Text.empty namePolicy t
+
+genTypeWithRef
+  :: ResolvedTypeDef -> (TypeRef, TypeName, ResolvedType, Version)
+genTypeWithRef td@TypeDef{typeDefRef = ref@TypeRef{..}} =
+  (ref, typeRef_name, typeDefType td, typeRef_version)
 
 
 shouldGenClass :: Type_ st pref tref -> Bool
@@ -297,6 +304,33 @@ pythonClassName c = Text.intercalate "" $ map cap1 $ Text.split (== '.') c
 
 returnPythonClassName :: Text -> Text
 returnPythonClassName c = last $ Text.split (== '.') c
+
+pythonClassNameFromPolicy :: NamePolicy -> PredicateRef -> Text
+pythonClassNameFromPolicy namePolicy ref =
+  case lookupPredName namePolicy ref of
+    Just (ns, name) -> pythonClassName (Text.intercalate "." (ns ++ [name]))
+    Nothing -> pythonClassName (predicateRef_name ref)
+
+returnPythonClassNameFromPolicy :: NamePolicy -> PredicateRef -> Text
+returnPythonClassNameFromPolicy namePolicy ref =
+  case lookupPredName namePolicy ref of
+    Just (_, name) -> name
+    Nothing -> returnPythonClassName (predicateRef_name ref)
+
+pythonTypeNameFromPolicy :: NamePolicy -> TypeRef -> Text
+pythonTypeNameFromPolicy namePolicy ref =
+  case HashMap.lookup ref (typeNames namePolicy) of
+    Just (ns, name) -> pythonClassName (Text.intercalate "." (ns ++ [name]))
+    Nothing -> pythonClassName (typeRef_name ref)
+
+lookupPredName :: NamePolicy -> PredicateRef -> Maybe ([Text], Text)
+lookupPredName namePolicy ref =
+  case HashMap.lookup ref (predNames namePolicy) of
+    Just nm -> Just nm
+    Nothing -> HashMap.lookup (predRefAsTypeRef ref) (typeNames namePolicy)
+
+predRefAsTypeRef :: PredicateRef -> TypeRef
+predRefAsTypeRef (PredicateRef name version) = TypeRef name version
 
 filenameToNamespace :: Text -> Text
 filenameToNamespace n = Text.concat $ Text.split (=='_') n
