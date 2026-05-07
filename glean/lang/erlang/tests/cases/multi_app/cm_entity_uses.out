@@ -1,0 +1,935 @@
+[
+  "@generated",
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 5, "start": 430 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": { "arity": 0, "module": "server", "name": "state" },
+              "span": { "length": 45, "start": 154 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 5, "start": 519 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": { "arity": 0, "module": "server", "name": "state" },
+              "span": { "length": 45, "start": 154 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 5, "start": 547 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": { "arity": 0, "module": "server", "name": "state" },
+              "span": { "length": 45, "start": 154 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 5, "start": 755 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": { "arity": 0, "module": "server", "name": "state" },
+              "span": { "length": 45, "start": 154 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 5, "start": 777 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": { "arity": 0, "module": "server", "name": "state" },
+              "span": { "length": 45, "start": 154 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 6, "start": 88 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": { "arity": 1, "module": "server", "name": "init" },
+              "span": { "length": 43, "start": 440 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 7, "start": 50 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": { "arity": 0, "module": "server", "name": "start" },
+              "span": { "length": 49, "start": 352 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 7, "start": 274 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": { "arity": 1, "module": "server", "name": "old_api" },
+              "span": { "length": 18, "start": 1064 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 8, "start": 186 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": { "arity": 99, "module": "shared.hrl", "name": "request" },
+              "span": { "length": 83, "start": 58 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 8, "start": 222 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": { "arity": 99, "module": "shared.hrl", "name": "request" },
+              "span": { "length": 83, "start": 58 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 8, "start": 859 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": { "arity": 99, "module": "shared.hrl", "name": "request" },
+              "span": { "length": 83, "start": 58 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 8, "start": 911 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": { "arity": 99, "module": "shared.hrl", "name": "request" },
+              "span": { "length": 83, "start": 58 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 8, "start": 1100 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": { "arity": 99, "module": "shared.hrl", "name": "request" },
+              "span": { "length": 83, "start": 58 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 9, "start": 1146 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": { "arity": 1146, "module": "server", "name": "TRANSFORM" },
+              "span": { "length": 9, "start": 1146 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 11, "start": 944 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": {
+                "arity": 944,
+                "module": "server",
+                "name": "MAX_RETRIES"
+              },
+              "span": { "length": 11, "start": 944 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 13, "start": 96 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": { "arity": 3, "module": "server", "name": "handle_call" },
+              "span": { "length": 170, "start": 557 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 13, "start": 111 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": { "arity": 2, "module": "server", "name": "handle_cast" },
+              "span": { "length": 49, "start": 787 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 15, "start": 615 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": {
+                "arity": 1,
+                "module": "server",
+                "name": "process_request"
+              },
+              "span": { "length": 87, "start": 1084 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 15, "start": 1012 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": {
+                "arity": 1,
+                "module": "server",
+                "name": "process_request"
+              },
+              "span": { "length": 87, "start": 1084 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 16, "start": 59 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": {
+                "arity": 1,
+                "module": "server",
+                "name": "handle_request"
+              },
+              "span": { "length": 137, "start": 896 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 23, "start": 129 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": {
+                "arity": 100,
+                "module": "shared.hrl",
+                "name": "shared.hrl"
+              },
+              "span": { "length": 1, "start": 0 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/utils.erl" },
+      "span": { "length": 2, "start": 143 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/utils.erl" },
+              "fqn": { "arity": 143, "module": "utils", "name": "Id" },
+              "span": { "length": 2, "start": 143 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/utils.erl" },
+      "span": { "length": 2, "start": 171 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/utils.erl" },
+              "fqn": { "arity": 171, "module": "utils", "name": "Id" },
+              "span": { "length": 2, "start": 171 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/utils.erl" },
+      "span": { "length": 8, "start": 94 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": { "arity": 99, "module": "shared.hrl", "name": "request" },
+              "span": { "length": 83, "start": 58 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/utils.erl" },
+      "span": { "length": 8, "start": 129 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": { "arity": 99, "module": "shared.hrl", "name": "request" },
+              "span": { "length": 83, "start": 58 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/utils.erl" },
+      "span": { "length": 8, "start": 192 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": { "arity": 99, "module": "shared.hrl", "name": "request" },
+              "span": { "length": 83, "start": 58 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/utils.erl" },
+      "span": { "length": 8, "start": 239 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": { "arity": 99, "module": "shared.hrl", "name": "request" },
+              "span": { "length": 83, "start": 58 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/utils.erl" },
+      "span": { "length": 8, "start": 295 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": { "arity": 99, "module": "shared.hrl", "name": "request" },
+              "span": { "length": 83, "start": 58 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/utils.erl" },
+      "span": { "length": 10, "start": 38 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/utils.erl" },
+              "fqn": { "arity": 1, "module": "utils", "name": "validate" },
+              "span": { "length": 83, "start": 230 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/utils.erl" },
+      "span": { "length": 11, "start": 25 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/utils.erl" },
+              "fqn": { "arity": 1, "module": "utils", "name": "format_id" },
+              "span": { "length": 56, "start": 119 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_a/src/utils.erl" },
+      "span": { "length": 23, "start": 53 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": {
+                "arity": 100,
+                "module": "shared.hrl",
+                "name": "shared.hrl"
+              },
+              "span": { "length": 1, "start": 0 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/client.erl" },
+      "span": { "length": 8, "start": 191 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": { "arity": 99, "module": "shared.hrl", "name": "request" },
+              "span": { "length": 83, "start": 58 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/client.erl" },
+      "span": { "length": 12, "start": 42 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/client.erl" },
+              "fqn": { "arity": 1, "module": "client", "name": "batch_send" },
+              "span": { "length": 68, "start": 409 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/client.erl" },
+      "span": { "length": 14, "start": 26 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/client.erl" },
+              "fqn": { "arity": 1, "module": "client", "name": "send_request" },
+              "span": { "length": 195, "start": 156 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/client.erl" },
+      "span": { "length": 14, "start": 259 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/utils.erl" },
+              "fqn": { "arity": 1, "module": "utils", "name": "validate" },
+              "span": { "length": 83, "start": 230 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/client.erl" },
+      "span": { "length": 18, "start": 447 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/client.erl" },
+              "fqn": { "arity": 1, "module": "client", "name": "send_request" },
+              "span": { "length": 195, "start": 156 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/client.erl" },
+      "span": { "length": 21, "start": 296 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": {
+                "arity": 1,
+                "module": "server",
+                "name": "handle_request"
+              },
+              "span": { "length": 137, "start": 896 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/client.erl" },
+      "span": { "length": 41, "start": 59 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": {
+                "arity": 100,
+                "module": "shared.hrl",
+                "name": "shared.hrl"
+              },
+              "span": { "length": 1, "start": 0 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 1, "start": 251 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": { "arity": 251, "module": "internal", "name": "C" },
+              "span": { "length": 1, "start": 251 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 1, "start": 257 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": { "arity": 257, "module": "internal", "name": "C" },
+              "span": { "length": 1, "start": 257 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 2, "start": 126 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": { "arity": 126, "module": "internal", "name": "Id" },
+              "span": { "length": 2, "start": 126 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 2, "start": 212 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": { "arity": 212, "module": "internal", "name": "Id" },
+              "span": { "length": 2, "start": 212 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 3, "start": 76 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": { "arity": 76, "module": "internal", "name": "Req" },
+              "span": { "length": 3, "start": 76 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 3, "start": 147 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": { "arity": 147, "module": "internal", "name": "Req" },
+              "span": { "length": 3, "start": 147 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 8, "start": 82 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": { "arity": 99, "module": "shared.hrl", "name": "request" },
+              "span": { "length": 83, "start": 58 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 8, "start": 223 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": { "arity": 223, "module": "internal", "name": "Filtered" },
+              "span": { "length": 8, "start": 223 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 8, "start": 289 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": { "arity": 289, "module": "internal", "name": "Filtered" },
+              "span": { "length": 8, "start": 289 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 9, "start": 157 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": {
+                "arity": 157,
+                "module": "internal",
+                "name": "Formatted"
+              },
+              "span": { "length": 9, "start": 157 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 9, "start": 272 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": {
+                "arity": 272,
+                "module": "internal",
+                "name": "Formatted"
+              },
+              "span": { "length": 9, "start": 272 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 11, "start": 300 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": {
+                "arity": 300,
+                "module": "internal",
+                "name": "MAX_RETRIES"
+              },
+              "span": { "length": 11, "start": 300 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 15, "start": 131 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/utils.erl" },
+              "fqn": { "arity": 1, "module": "utils", "name": "format_id" },
+              "span": { "length": 56, "start": 119 }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": {
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 41, "start": 20 },
+      "target": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": {
+                "arity": 100,
+                "module": "shared.hrl",
+                "name": "shared.hrl"
+              },
+              "span": { "length": 1, "start": 0 }
+            }
+          }
+        }
+      }
+    }
+  }
+]

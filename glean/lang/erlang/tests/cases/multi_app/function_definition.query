@@ -1,0 +1,3 @@
+query: erlang.FunctionDefinition.2 _
+perf: True
+transform: [gensort, []]

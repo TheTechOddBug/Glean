@@ -1,0 +1,3 @@
+query: erlang.MacroDeclaration.2 _
+perf: True
+transform: [gensort, []]

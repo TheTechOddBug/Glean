@@ -1,0 +1,3 @@
+query: codemarkup.erlang.ErlangResolveLocation.2 _
+perf: true
+transform: [normord, []]

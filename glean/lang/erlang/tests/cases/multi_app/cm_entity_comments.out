@@ -1,0 +1,591 @@
+[
+  "@generated",
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_a/include/shared.hrl" },
+                "fqn": {
+                  "arity": 99,
+                  "module": "shared.hrl",
+                  "name": "request"
+                },
+                "span": { "length": 83, "start": 58 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_a/include/shared.hrl" },
+      "span": { "length": 83, "start": 58 },
+      "text": "```erlang\u000a-record(request, {id :: integer(), payload :: binary(), retries = 0 :: integer()}).\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_a/src/server.erl" },
+                "fqn": { "arity": 0, "module": "server", "name": "start" },
+                "span": { "length": 49, "start": 352 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 29, "start": 322 },
+      "text": "```erlang\u000a-spec start() -> {ok, pid()}.\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_a/src/server.erl" },
+                "fqn": { "arity": 0, "module": "server", "name": "state" },
+                "span": { "length": 45, "start": 154 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 45, "start": 154 },
+      "text": "```erlang\u000a-type state() :: #{requests := [#request{}]}.\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_a/src/server.erl" },
+                "fqn": {
+                  "arity": 1,
+                  "module": "server",
+                  "name": "handle_request"
+                },
+                "span": { "length": 137, "start": 896 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 57, "start": 838 },
+      "text": "```erlang\u000a-spec handle_request(#request{}) -> ok | {error, term()}.\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_a/src/server.erl" },
+                "fqn": { "arity": 1, "module": "server", "name": "init" },
+                "span": { "length": 43, "start": 440 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 36, "start": 403 },
+      "text": "```erlang\u000a-spec init(term()) -> {ok, state()}.\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_a/src/server.erl" },
+                "fqn": { "arity": 1, "module": "server", "name": "old_api" },
+                "span": { "length": 18, "start": 1064 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 28, "start": 1035 },
+      "text": "```erlang\u000a-spec old_api(term()) -> ok.\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_a/src/server.erl" },
+                "fqn": {
+                  "arity": 2,
+                  "module": "server",
+                  "name": "handle_cast"
+                },
+                "span": { "length": 49, "start": 787 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 57, "start": 729 },
+      "text": "```erlang\u000a-spec handle_cast(term(), state()) -> {noreply, state()}.\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_a/src/server.erl" },
+                "fqn": {
+                  "arity": 3,
+                  "module": "server",
+                  "name": "handle_call"
+                },
+                "span": { "length": 170, "start": 557 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 71, "start": 485 },
+      "text": "```erlang\u000a-spec handle_call(term(), term(), state()) -> {reply, term(), state()}.\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_a/src/server.erl" },
+                "fqn": {
+                  "arity": 944,
+                  "module": "server",
+                  "name": "MAX_RETRIES"
+                },
+                "span": { "length": 11, "start": 944 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 11, "start": 944 },
+      "text": "```erlang\u000a-define(MAX_RETRIES, 3).\u000a```\u000a---\u000a\u000a```erlang\u000a3\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_a/src/server.erl" },
+                "fqn": {
+                  "arity": 1146,
+                  "module": "server",
+                  "name": "TRANSFORM"
+                },
+                "span": { "length": 9, "start": 1146 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_a/src/server.erl" },
+      "span": { "length": 9, "start": 1146 },
+      "text": "```erlang\u000a-define(TRANSFORM(X), {ok, X}).\u000a```\u000a---\u000a\u000a```erlang\u000a{\u000a    ok,\u000a    {\u000a        Id,\u000a        Payload\u000a    }\u000a}\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_a/src/utils.erl" },
+                "fqn": { "arity": 1, "module": "utils", "name": "format_id" },
+                "span": { "length": 56, "start": 119 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_a/src/utils.erl" },
+      "span": { "length": 40, "start": 78 },
+      "text": "```erlang\u000a-spec format_id(#request{}) -> string().\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_a/src/utils.erl" },
+                "fqn": { "arity": 1, "module": "utils", "name": "validate" },
+                "span": { "length": 83, "start": 230 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_a/src/utils.erl" },
+      "span": { "length": 52, "start": 177 },
+      "text": "```erlang\u000a-spec validate(#request{}) -> ok | {error, invalid}.\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_a/src/utils.erl" },
+                "fqn": { "arity": 143, "module": "utils", "name": "Id" },
+                "span": { "length": 2, "start": 143 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_a/src/utils.erl" },
+      "span": { "length": 2, "start": 143 },
+      "text": "```erlang\u000aId :: number()\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_a/src/utils.erl" },
+                "fqn": { "arity": 171, "module": "utils", "name": "Id" },
+                "span": { "length": 2, "start": 171 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_a/src/utils.erl" },
+      "span": { "length": 2, "start": 171 },
+      "text": "```erlang\u000aId :: number()\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_b/src/client.erl" },
+                "fqn": { "arity": 1, "module": "client", "name": "batch_send" },
+                "span": { "length": 68, "start": 409 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_b/src/client.erl" },
+      "span": { "length": 55, "start": 353 },
+      "text": "```erlang\u000a-spec batch_send([binary()]) -> [ok | {error, term()}].\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_b/src/client.erl" },
+                "fqn": {
+                  "arity": 1,
+                  "module": "client",
+                  "name": "send_request"
+                },
+                "span": { "length": 195, "start": 156 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_b/src/client.erl" },
+      "span": { "length": 53, "start": 102 },
+      "text": "```erlang\u000a-spec send_request(binary()) -> ok | {error, term()}.\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_b/src/internal.erl" },
+                "fqn": { "arity": 76, "module": "internal", "name": "Req" },
+                "span": { "length": 3, "start": 76 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 3, "start": 76 },
+      "text": "```erlang\u000aReq :: #request{}\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_b/src/internal.erl" },
+                "fqn": { "arity": 126, "module": "internal", "name": "Id" },
+                "span": { "length": 2, "start": 126 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 2, "start": 126 },
+      "text": "```erlang\u000aId :: erlang:string()\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_b/src/internal.erl" },
+                "fqn": { "arity": 147, "module": "internal", "name": "Req" },
+                "span": { "length": 3, "start": 147 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 3, "start": 147 },
+      "text": "```erlang\u000aReq :: #request{}\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_b/src/internal.erl" },
+                "fqn": {
+                  "arity": 157,
+                  "module": "internal",
+                  "name": "Formatted"
+                },
+                "span": { "length": 9, "start": 157 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 9, "start": 157 },
+      "text": "```erlang\u000aFormatted :: [number()]\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_b/src/internal.erl" },
+                "fqn": { "arity": 212, "module": "internal", "name": "Id" },
+                "span": { "length": 2, "start": 212 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 2, "start": 212 },
+      "text": "```erlang\u000aId :: erlang:string()\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_b/src/internal.erl" },
+                "fqn": {
+                  "arity": 223,
+                  "module": "internal",
+                  "name": "Filtered"
+                },
+                "span": { "length": 8, "start": 223 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 8, "start": 223 },
+      "text": "```erlang\u000aFiltered :: [term()]\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_b/src/internal.erl" },
+                "fqn": { "arity": 251, "module": "internal", "name": "C" },
+                "span": { "length": 1, "start": 251 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 1, "start": 251 },
+      "text": "```erlang\u000aC :: term()\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_b/src/internal.erl" },
+                "fqn": { "arity": 257, "module": "internal", "name": "C" },
+                "span": { "length": 1, "start": 257 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 1, "start": 257 },
+      "text": "```erlang\u000aC :: term()\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_b/src/internal.erl" },
+                "fqn": {
+                  "arity": 272,
+                  "module": "internal",
+                  "name": "Formatted"
+                },
+                "span": { "length": 9, "start": 272 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 9, "start": 272 },
+      "text": "```erlang\u000aFormatted :: [number()]\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_b/src/internal.erl" },
+                "fqn": {
+                  "arity": 289,
+                  "module": "internal",
+                  "name": "Filtered"
+                },
+                "span": { "length": 8, "start": 289 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 8, "start": 289 },
+      "text": "```erlang\u000aFiltered :: [term()]\u000a```"
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "erlang": {
+          "decl": {
+            "func": {
+              "key": {
+                "file": { "key": "app_b/src/internal.erl" },
+                "fqn": {
+                  "arity": 300,
+                  "module": "internal",
+                  "name": "MAX_RETRIES"
+                },
+                "span": { "length": 11, "start": 300 }
+              }
+            }
+          }
+        }
+      },
+      "file": { "key": "app_b/src/internal.erl" },
+      "span": { "length": 11, "start": 300 },
+      "text": "```erlang\u000a-define(MAX_RETRIES, 3).\u000a```\u000a---\u000a\u000a```erlang\u000a3\u000a```"
+    }
+  }
+]

@@ -1,0 +1,567 @@
+[
+  "@generated",
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": {
+                "arity": 0,
+                "module": "shared.hrl",
+                "name": "MAX_RETRIES"
+              },
+              "span": { "length": 24, "start": 0 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": {
+                "arity": 1,
+                "module": "shared.hrl",
+                "name": "TRANSFORM"
+              },
+              "span": { "length": 31, "start": 25 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": { "arity": 99, "module": "shared.hrl", "name": "request" },
+              "span": { "length": 83, "start": 58 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/include/shared.hrl" },
+              "fqn": {
+                "arity": 100,
+                "module": "shared.hrl",
+                "name": "shared.hrl"
+              },
+              "span": { "length": 1, "start": 0 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": { "arity": 0, "module": "server", "name": "start" },
+              "span": { "length": 49, "start": 352 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": { "arity": 0, "module": "server", "name": "state" },
+              "span": { "length": 45, "start": 154 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": {
+                "arity": 1,
+                "module": "server",
+                "name": "handle_request"
+              },
+              "span": { "length": 137, "start": 896 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": { "arity": 1, "module": "server", "name": "init" },
+              "span": { "length": 43, "start": 440 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": { "arity": 1, "module": "server", "name": "old_api" },
+              "span": { "length": 18, "start": 1064 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": {
+                "arity": 1,
+                "module": "server",
+                "name": "process_request"
+              },
+              "span": { "length": 87, "start": 1084 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": { "arity": 2, "module": "server", "name": "handle_cast" },
+              "span": { "length": 49, "start": 787 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": { "arity": 3, "module": "server", "name": "handle_call" },
+              "span": { "length": 170, "start": 557 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": {
+                "arity": 944,
+                "module": "server",
+                "name": "MAX_RETRIES"
+              },
+              "span": { "length": 11, "start": 944 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/server.erl" },
+              "fqn": { "arity": 1146, "module": "server", "name": "TRANSFORM" },
+              "span": { "length": 9, "start": 1146 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/utils.erl" },
+              "fqn": { "arity": 1, "module": "utils", "name": "format_id" },
+              "span": { "length": 56, "start": 119 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/utils.erl" },
+              "fqn": { "arity": 1, "module": "utils", "name": "retry_delay" },
+              "span": { "length": 26, "start": 315 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/utils.erl" },
+              "fqn": { "arity": 1, "module": "utils", "name": "validate" },
+              "span": { "length": 83, "start": 230 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/utils.erl" },
+              "fqn": { "arity": 143, "module": "utils", "name": "Id" },
+              "span": { "length": 2, "start": 143 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_a/src/utils.erl" },
+              "fqn": { "arity": 171, "module": "utils", "name": "Id" },
+              "span": { "length": 2, "start": 171 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/client.erl" },
+              "fqn": { "arity": 1, "module": "client", "name": "batch_send" },
+              "span": { "length": 68, "start": 409 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/client.erl" },
+              "fqn": { "arity": 1, "module": "client", "name": "send_request" },
+              "span": { "length": 195, "start": 156 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": { "arity": 0, "module": "internal", "name": "run" },
+              "span": { "length": 250, "start": 63 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": { "arity": 76, "module": "internal", "name": "Req" },
+              "span": { "length": 3, "start": 76 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": { "arity": 126, "module": "internal", "name": "Id" },
+              "span": { "length": 2, "start": 126 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": { "arity": 147, "module": "internal", "name": "Req" },
+              "span": { "length": 3, "start": 147 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": {
+                "arity": 157,
+                "module": "internal",
+                "name": "Formatted"
+              },
+              "span": { "length": 9, "start": 157 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": { "arity": 212, "module": "internal", "name": "Id" },
+              "span": { "length": 2, "start": 212 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": { "arity": 223, "module": "internal", "name": "Filtered" },
+              "span": { "length": 8, "start": 223 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": { "arity": 251, "module": "internal", "name": "C" },
+              "span": { "length": 1, "start": 251 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": { "arity": 257, "module": "internal", "name": "C" },
+              "span": { "length": 1, "start": 257 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": {
+                "arity": 272,
+                "module": "internal",
+                "name": "Formatted"
+              },
+              "span": { "length": 9, "start": 272 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": { "arity": 289, "module": "internal", "name": "Filtered" },
+              "span": { "length": 8, "start": 289 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  },
+  {
+    "key": {
+      "entity": {
+        "decl": {
+          "func": {
+            "key": {
+              "file": { "key": "app_b/src/internal.erl" },
+              "fqn": {
+                "arity": 300,
+                "module": "internal",
+                "name": "MAX_RETRIES"
+              },
+              "span": { "length": 11, "start": 300 }
+            }
+          }
+        }
+      },
+      "info": { "isAbstract": false, "kind": 13 }
+    }
+  }
+]
