@@ -1,5 +1,0 @@
-{
-  "@generated": null,
-  "facts_searched": { "erlang.FunctionDeclaration.1": 16 },
-  "full_scans": [ "erlang.FunctionDeclaration.1" ]
-}

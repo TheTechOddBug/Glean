@@ -1,1 +1,2 @@
 -define(HELLO, 42).
+-define(ADD_ONE(X), X + 1).

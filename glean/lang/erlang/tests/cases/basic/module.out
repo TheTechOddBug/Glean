@@ -4,7 +4,7 @@
     "key": {
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
       "name": "example",
-      "exports": [ "add/2", "hello/1", "factorial/1" ]
+      "app": "basic"
     }
   }
 ]

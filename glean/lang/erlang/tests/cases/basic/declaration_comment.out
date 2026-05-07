@@ -3,225 +3,165 @@
   {
     "key": {
       "declaration": {
-        "key": {
-          "fqn": { "module": "example", "name": "HELLO", "arity": 193 },
-          "file": {
-            "key": "glean/lang/erlang/tests/cases/basic/src/example.erl"
-          },
-          "span": { "start": 193, "length": 5 }
+        "func": {
+          "key": {
+            "fqn": { "module": "example", "name": "add", "arity": 2 },
+            "app": "basic"
+          }
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 193, "length": 5 },
-      "text": "```erlang\u000a-define(HELLO, 42).\u000a```\u000a---\u000a\u000a```erlang\u000a42\u000a```"
+      "span": { "start": 504, "length": 30 },
+      "text": "-doc \"\"\"\u000aAdds two numbers\u000a\"\"\"."
     }
   },
   {
     "key": {
       "declaration": {
-        "key": {
-          "fqn": { "module": "example", "name": "N", "arity": 411 },
-          "file": {
-            "key": "glean/lang/erlang/tests/cases/basic/src/example.erl"
-          },
-          "span": { "start": 411, "length": 1 }
+        "func": {
+          "key": {
+            "fqn": { "module": "example", "name": "add", "arity": 2 },
+            "app": "basic"
+          }
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 411, "length": 1 },
-      "text": "```erlang\u000aN :: number()\u000a```"
-    }
-  },
-  {
-    "key": {
-      "declaration": {
-        "key": {
-          "fqn": { "module": "example", "name": "N", "arity": 419 },
-          "file": {
-            "key": "glean/lang/erlang/tests/cases/basic/src/example.erl"
-          },
-          "span": { "start": 419, "length": 1 }
-        }
-      },
-      "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 419, "length": 1 },
-      "text": "```erlang\u000aN :: number()\u000a```"
-    }
-  },
-  {
-    "key": {
-      "declaration": {
-        "key": {
-          "fqn": { "module": "example", "name": "N", "arity": 432 },
-          "file": {
-            "key": "glean/lang/erlang/tests/cases/basic/src/example.erl"
-          },
-          "span": { "start": 432, "length": 1 }
-        }
-      },
-      "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 432, "length": 1 },
-      "text": "```erlang\u000aN :: number()\u000a```"
-    }
-  },
-  {
-    "key": {
-      "declaration": {
-        "key": {
-          "fqn": { "module": "example", "name": "N", "arity": 446 },
-          "file": {
-            "key": "glean/lang/erlang/tests/cases/basic/src/example.erl"
-          },
-          "span": { "start": 446, "length": 1 }
-        }
-      },
-      "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 446, "length": 1 },
-      "text": "```erlang\u000aN :: number()\u000a```"
-    }
-  },
-  {
-    "key": {
-      "declaration": {
-        "key": {
-          "fqn": { "module": "example", "name": "Name", "arity": 155 },
-          "file": {
-            "key": "glean/lang/erlang/tests/cases/basic/src/example.erl"
-          },
-          "span": { "start": 155, "length": 4 }
-        }
-      },
-      "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 155, "length": 4 },
-      "text": "```erlang\u000aName :: erlang:string()\u000a```"
-    }
-  },
-  {
-    "key": {
-      "declaration": {
-        "key": {
-          "fqn": { "module": "example", "name": "Name", "arity": 200 },
-          "file": {
-            "key": "glean/lang/erlang/tests/cases/basic/src/example.erl"
-          },
-          "span": { "start": 200, "length": 4 }
-        }
-      },
-      "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 200, "length": 4 },
-      "text": "```erlang\u000aName :: erlang:string()\u000a```"
-    }
-  },
-  {
-    "key": {
-      "declaration": {
-        "key": {
-          "fqn": { "module": "example", "name": "X", "arity": 287 },
-          "file": {
-            "key": "glean/lang/erlang/tests/cases/basic/src/example.erl"
-          },
-          "span": { "start": 287, "length": 1 }
-        }
-      },
-      "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 287, "length": 1 },
-      "text": "```erlang\u000aX :: number()\u000a```"
-    }
-  },
-  {
-    "key": {
-      "declaration": {
-        "key": {
-          "fqn": { "module": "example", "name": "X", "arity": 300 },
-          "file": {
-            "key": "glean/lang/erlang/tests/cases/basic/src/example.erl"
-          },
-          "span": { "start": 300, "length": 1 }
-        }
-      },
-      "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 300, "length": 1 },
-      "text": "```erlang\u000aX :: number()\u000a```"
-    }
-  },
-  {
-    "key": {
-      "declaration": {
-        "key": {
-          "fqn": { "module": "example", "name": "Y", "arity": 290 },
-          "file": {
-            "key": "glean/lang/erlang/tests/cases/basic/src/example.erl"
-          },
-          "span": { "start": 290, "length": 1 }
-        }
-      },
-      "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 290, "length": 1 },
-      "text": "```erlang\u000aY :: number()\u000a```"
-    }
-  },
-  {
-    "key": {
-      "declaration": {
-        "key": {
-          "fqn": { "module": "example", "name": "Y", "arity": 304 },
-          "file": {
-            "key": "glean/lang/erlang/tests/cases/basic/src/example.erl"
-          },
-          "span": { "start": 304, "length": 1 }
-        }
-      },
-      "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 304, "length": 1 },
-      "text": "```erlang\u000aY :: number()\u000a```"
-    }
-  },
-  {
-    "key": {
-      "declaration": {
-        "key": {
-          "fqn": { "module": "example", "name": "add", "arity": 2 },
-          "file": {
-            "key": "glean/lang/erlang/tests/cases/basic/src/example.erl"
-          },
-          "span": { "start": 283, "length": 23 }
-        }
-      },
-      "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 240, "length": 42 },
+      "span": { "start": 535, "length": 42 },
       "text": "```erlang\u000a-spec add(number(), number()) -> number().\u000a```"
     }
   },
   {
     "key": {
       "declaration": {
-        "key": {
-          "fqn": { "module": "example", "name": "factorial", "arity": 1 },
-          "file": {
-            "key": "glean/lang/erlang/tests/cases/basic/src/example.erl"
-          },
-          "span": { "start": 382, "length": 71 }
+        "func": {
+          "key": {
+            "fqn": { "module": "example", "name": "factorial", "arity": 1 },
+            "app": "basic"
+          }
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 343, "length": 38 },
+      "span": { "start": 603, "length": 34 },
+      "text": "-doc \"\"\"\u000aCalculates factorial\u000a\"\"\"."
+    }
+  },
+  {
+    "key": {
+      "declaration": {
+        "func": {
+          "key": {
+            "fqn": { "module": "example", "name": "factorial", "arity": 1 },
+            "app": "basic"
+          }
+        }
+      },
+      "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
+      "span": { "start": 638, "length": 38 },
       "text": "```erlang\u000a-spec factorial(number()) -> number().\u000a```"
     }
   },
   {
     "key": {
       "declaration": {
-        "key": {
-          "fqn": { "module": "example", "name": "hello", "arity": 1 },
-          "file": {
-            "key": "glean/lang/erlang/tests/cases/basic/src/example.erl"
-          },
-          "span": { "start": 149, "length": 58 }
+        "func": {
+          "key": {
+            "fqn": { "module": "example", "name": "get_name", "arity": 1 },
+            "app": "basic"
+          }
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 120, "length": 28 },
+      "span": { "start": 750, "length": 38 },
+      "text": "```erlang\u000a-spec get_name(#person{}) -> string().\u000a```"
+    }
+  },
+  {
+    "key": {
+      "declaration": {
+        "func": {
+          "key": {
+            "fqn": { "module": "example", "name": "hello", "arity": 1 },
+            "app": "basic"
+          }
+        }
+      },
+      "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
+      "span": { "start": 380, "length": 34 },
+      "text": "-doc \"This is the hello function\"."
+    }
+  },
+  {
+    "key": {
+      "declaration": {
+        "func": {
+          "key": {
+            "fqn": { "module": "example", "name": "hello", "arity": 1 },
+            "app": "basic"
+          }
+        }
+      },
+      "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
+      "span": { "start": 415, "length": 28 },
       "text": "```erlang\u000a-spec hello(string()) -> ok.\u000a```"
+    }
+  },
+  {
+    "key": {
+      "declaration": {
+        "func": {
+          "key": {
+            "fqn": { "module": "example", "name": "old_function", "arity": 1 },
+            "app": "basic"
+          }
+        }
+      },
+      "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
+      "span": { "start": 921, "length": 33 },
+      "text": "```erlang\u000a-spec old_function(term()) -> ok.\u000a```"
+    }
+  },
+  {
+    "key": {
+      "declaration": {
+        "func": {
+          "key": {
+            "fqn": { "module": "example", "name": "set_age", "arity": 2 },
+            "app": "basic"
+          }
+        }
+      },
+      "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
+      "span": { "start": 830, "length": 49 },
+      "text": "```erlang\u000a-spec set_age(#person{}, integer()) -> #person{}.\u000a```"
+    }
+  },
+  {
+    "key": {
+      "declaration": {
+        "record_": {
+          "key": { "name": "person", "module": "example", "app": "basic" }
+        }
+      },
+      "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
+      "span": { "start": 222, "length": 54 },
+      "text": "```erlang\u000a-record(person, {name :: string(), age :: integer()}).\u000a```"
+    }
+  },
+  {
+    "key": {
+      "declaration": {
+        "type_": {
+          "key": {
+            "name": "config",
+            "arity": 0,
+            "module": "example",
+            "app": "basic"
+          }
+        }
+      },
+      "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
+      "span": { "start": 168, "length": 52 },
+      "text": "```erlang\u000a-type config() :: #{key := atom(), value := term()}.\u000a```"
     }
   }
 ]

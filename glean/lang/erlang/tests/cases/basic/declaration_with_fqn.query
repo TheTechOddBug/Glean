@@ -1,3 +1,0 @@
-query: erlang.DeclarationWithFqn.1 _
-perf: True
-transform: [gensort, []]
