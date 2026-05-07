@@ -71,7 +71,7 @@ indexer = Indexer {
             , "${JSON_BATCH_DIR}"
             ],
           extDerivePredicates =
-            [ "erlang.DeclarationUses"
+            [ "erlang.DeclarationUses.1"
             ],
           extAllowNonZeroExit = False
         }

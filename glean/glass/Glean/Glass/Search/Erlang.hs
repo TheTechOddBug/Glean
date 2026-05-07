@@ -28,19 +28,19 @@ import qualified Glean.Schema.Src.Types as Src
 import Text.Read ( readMaybe )
 import Data.Word ( Word64 )
 
-instance Search (ResultLocation Erlang.Entity) where
+instance Search (ResultLocation Erlang.Entity_1) where
   symbolSearch toks
     | [module_, name, arity] <- toks
     , Just arityNum <- readMaybe $ unpack arity = do
         searchSymbolId toks $ searchByFQN module_ name arityNum
     | otherwise = return $ None "Erlang.symbolSearch: invalid query"
 
-searchByFQN :: Text -> Text -> Word64 -> Angle (ResultLocation Erlang.Entity)
+searchByFQN :: Text -> Text -> Word64 -> Angle (ResultLocation Erlang.Entity_1)
 searchByFQN module_ name arity =
-  vars $ \(ent :: Angle Erlang.Entity) (file :: Angle Src.File)
+  vars $ \(ent :: Angle Erlang.Entity_1) (file :: Angle Src.File)
     (rangespan :: Angle Code.RangeSpan) (lname :: Angle Text) ->
   tuple (ent, file, rangespan, lname) `where_` [
-    wild .= predicate @Erlang.SearchByFQN (
+    wild .= predicate @Erlang.SearchByFQN_4 (
       rec $
         field @"module" (string module_) $
         field @"name" (string name) $

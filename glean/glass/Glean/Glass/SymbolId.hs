@@ -96,7 +96,7 @@ import qualified Glean.Schema.Code.Types as Code
 import qualified Glean.Schema.CodeLsif.Types as Lsif
 import qualified Glean.Schema.CodeScip.Types as Scip
 
-import Glean.Schema.CodeErlang.Types as Erlang ( Entity(Entity_decl) )
+import Glean.Schema.CodeErlang.Types as Erlang ( Entity_1(Entity_1_decl) )
 import Glean.Schema.CodeHack.Types as Hack ( Entity(Entity_decl) )
 import Glean.Schema.CodeJava.Types as Java ( Entity(Entity_decl) )
 import Glean.Schema.CodeKotlin.Types as Kotlin ( Entity(Entity_decl) )
@@ -403,7 +403,7 @@ entityToAngle e = case e of
     alt @"pp" (toAngle x)
   Code.Entity_hs x -> Right $
     alt @"hs" (toAngle x)
-  Code.Entity_erlang (Erlang.Entity_decl x) -> Right $
+  Code.Entity_erlang (Erlang.Entity_1_decl x) -> Right $
     alt @"erlang" (alt @"decl" (toAngle x))
   Code.Entity_graphql x -> Right $
     alt @"graphql" (toAngle x)

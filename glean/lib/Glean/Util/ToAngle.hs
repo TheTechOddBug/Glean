@@ -529,10 +529,10 @@ instance ToAngleFull a => ToAngleFull [a] where
 
 -- Erlang
 
-instance ToAngle Erlang.Declaration where
+instance ToAngle Erlang.Declaration_1 where
   toAngle d = case d of
-    Erlang.Declaration_func x -> alt @"func" (mkKey x)
-    Erlang.Declaration_EMPTY -> error "unknown Declaration"
+    Erlang.Declaration_1_func x -> alt @"func" (mkKey x)
+    Erlang.Declaration_1_EMPTY -> error "unknown Declaration"
 
 -- Angle
 instance ToAngle Anglelang.Entity where

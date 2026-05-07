@@ -313,10 +313,16 @@ predicate CallbackImplementation :
   Impl = erlang.FunctionDeclaration
     { fqn = { module = ModName, name = CbName, arity = CbArity } };
 
+# Extracted to a top-level type so the C++ codegen names this enum
+# `erlang.AppType` (avoids a name collision with the predicate `AppInfo`'s
+# C++ struct). Wire format unchanged: enum values still serialize as
+# integers FirstParty=0, Otp=1, ThirdParty=2.
+type AppType = enum { FirstParty | Otp | ThirdParty }
+
 predicate AppInfo :
   {
     name : string,
-    type_ : enum { FirstParty | Otp | ThirdParty },
+    type_ : AppType,
   }
 
 ## Types

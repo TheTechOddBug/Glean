@@ -23,23 +23,23 @@ import qualified Glean.Schema.Erlang.Types as Erlang
 import Data.Text (Text, intercalate)
 
 import Glean.Schema.CodeErlang.Types as CodeErlang
-    ( Entity(..) )
+    ( Entity_1(..) )
 
-instance Symbol CodeErlang.Entity where
+instance Symbol CodeErlang.Entity_1 where
   toSymbol e = case e of
-    CodeErlang.Entity_decl decl -> toSymbol decl
-    CodeErlang.Entity_EMPTY -> return []
+    CodeErlang.Entity_1_decl decl -> toSymbol decl
+    CodeErlang.Entity_1_EMPTY -> return []
 
-instance Symbol Erlang.Declaration where
+instance Symbol Erlang.Declaration_1 where
   toSymbol decl = case decl of
-    Erlang.Declaration_func func -> toSymbolPredicate func
-    Erlang.Declaration_EMPTY -> return []
+    Erlang.Declaration_1_func func -> toSymbolPredicate func
+    Erlang.Declaration_1_EMPTY -> return []
 
-instance Symbol Erlang.FunctionDeclaration_key where
-  toSymbol (Erlang.FunctionDeclaration_key fqn _file _span) = toSymbol fqn
+instance Symbol Erlang.FunctionDeclaration_1_key where
+  toSymbol (Erlang.FunctionDeclaration_1_key fqn _file _span) = toSymbol fqn
 
-instance Symbol Erlang.Fqn where
-  toSymbol (Erlang.Fqn module_ name arity) =
+instance Symbol Erlang.Fqn_1 where
+  toSymbol (Erlang.Fqn_1 module_ name arity) =
     return [module_, name, showt (fromNat arity)]
 
 instance Symbol Text where
@@ -49,23 +49,23 @@ instance Symbol (Text, Nat) where
   toSymbol (name, arity) =
       return [intercalate "." [name, showt (fromNat arity)]]
 
-instance ToQName CodeErlang.Entity where
+instance ToQName CodeErlang.Entity_1 where
   toQName e = case e of
-    CodeErlang.Entity_decl x -> toQName x
-    CodeErlang.Entity_EMPTY -> return $ Left "unknown Entity"
+    CodeErlang.Entity_1_decl x -> toQName x
+    CodeErlang.Entity_1_EMPTY -> return $ Left "unknown Entity"
 
-instance ToQName Erlang.Declaration where
+instance ToQName Erlang.Declaration_1 where
   toQName e = case e of
-    Erlang.Declaration_func x -> Glean.keyOf x >>= toQName
-    Erlang.Declaration_EMPTY -> return $ Left "unknown Declaration"
+    Erlang.Declaration_1_func x -> Glean.keyOf x >>= toQName
+    Erlang.Declaration_1_EMPTY -> return $ Left "unknown Declaration"
 
-instance ToQName Erlang.FunctionDeclaration_key where
+instance ToQName Erlang.FunctionDeclaration_1_key where
   toQName e = case e of
-    Erlang.FunctionDeclaration_key fqn _file _span -> toQName fqn
+    Erlang.FunctionDeclaration_1_key fqn _file _span -> toQName fqn
 
-instance ToQName Erlang.Fqn where
+instance ToQName Erlang.Fqn_1 where
   toQName e = case e of
-    Erlang.Fqn module_ name arity -> pairToQName (name, arity) module_
+    Erlang.Fqn_1 module_ name arity -> pairToQName (name, arity) module_
 
 pairToQName
   :: (Symbol name, Symbol container)
