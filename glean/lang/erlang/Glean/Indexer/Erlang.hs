@@ -60,6 +60,7 @@ indexer = Indexer {
           extArgs =
             [ "glean"
             , "--v2"
+            , "--schema2"
             , "--multi"
             , "--project"
             , fromMaybe "${TEST_ROOT}" elpProjectPath
@@ -71,7 +72,33 @@ indexer = Indexer {
             , "${JSON_BATCH_DIR}"
             ],
           extDerivePredicates =
-            [ "erlang.DeclarationUses.1"
+            [ "erlang.CallbackImplementation.2"
+            , "erlang.DeclarationReference.2"
+            , "erlang.DeclarationUses.1"
+            , "erlang.DeclarationUses.2"
+            , "erlang.DeclarationsByFile.2"
+            , "erlang.NameLowerCase.2"
+            , "erlang.SearchByName.2"
+            , "erlang.SearchFunctionByName.2"
+            , "erlang.SearchMacroByName.2"
+            , "erlang.SearchRecordByName.2"
+            , "erlang.SearchTypeByName.2"
+            , "erlang.SearchHeaderByName.2"
+            , "erlang.SearchCallbackByName.2"
+            , "erlang.SearchRecordFieldByName.2"
+            , "erlang.SearchModuleByName.2"
+            , "erlang.SearchMacroUsageByName.2"
+            , "erlang.SearchVarByName.2"
+            , "erlang.SearchFunctionByLowerCaseName.2"
+            , "erlang.SearchMacroByLowerCaseName.2"
+            , "erlang.SearchRecordByLowerCaseName.2"
+            , "erlang.SearchTypeByLowerCaseName.2"
+            , "erlang.SearchHeaderByLowerCaseName.2"
+            , "erlang.SearchCallbackByLowerCaseName.2"
+            , "erlang.SearchRecordFieldByLowerCaseName.2"
+            , "erlang.SearchModuleByLowerCaseName.2"
+            , "erlang.SearchMacroUsageByLowerCaseName.2"
+            , "erlang.SearchVarByLowerCaseName.2"
             ],
           extAllowNonZeroExit = False
         }
