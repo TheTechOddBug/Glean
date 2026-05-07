@@ -343,6 +343,11 @@ predicate ErlangEntityDocumentation :
     { macro_usage = Usage } = Entity;
     erlang.MacroUsage { expansion = Text } = Usage;
     erlang.MacroUsageLocation { usage = Usage, file = File, span = Span };
+  ) | (
+    { var_ = Var } = Entity;
+    erlang.VarDeclaration { type_text = { just = TypeText } } = Var;
+    erlang.VarLocation { var_ = Var, file = File, span = Span };
+    Text = { just = TypeText };
   )
 
 predicate ErlangContainsChildEntity :
@@ -392,7 +397,7 @@ predicate ErlangVisibility :
   { { decl = Decl }, Visibility } where
   { func = FuncDecl } = Decl;
   erlang.FunctionDefinition { declaration = FuncDecl, exported = Exported };
-  ( if Exported
+  ( if (Exported = true)
     then (Public = Visibility)
     else (Private = Visibility) );
 
