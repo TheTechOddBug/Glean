@@ -37,7 +37,6 @@ import Data.Typeable (Typeable)
 import GHC.Generics hiding (Meta)
 import System.Directory
 import System.FilePath
-import System.IO (hClose)
 import System.Timeout
 import Text.Printf
 import TextShow
@@ -361,15 +360,16 @@ doRestore env@Env{..} repo meta
 
     withScratchDirectory storage repo $ \scratch -> do
     say logInfo "starting"
+    say logInfo "downloading"
     let scratch_restore = scratch </> "restore"
+        scratch_file = scratch </> "file"
+    -- TODO: implement buffered downloads in Manifold client
+    void $ traceMsg envTracer GleanTraceSiteRestore $
+      Backend.restore site repo scratch_file
+    say logInfo "restoring"
     createDirectoryIfMissing True scratch_restore
-    say logInfo "downloading+restoring (streaming)"
-    (streamHandle, waitMeta) <- traceMsg envTracer GleanTraceSiteRestore $
-      Backend.restoreStream site repo
-    flip finally (hClose streamHandle) $ do
-      traceMsg envTracer GleanTraceStorageRestore $
-        Storage.restoreFromStream storage cfg repo scratch_restore streamHandle
-      void waitMeta
+    traceMsg envTracer GleanTraceStorageRestore $
+      Storage.restore storage cfg repo scratch_restore scratch_file
     say logInfo "adding"
     traceMsg envTracer GleanTraceFinishRestore $
       Catalog.finishRestoring envCatalog repo
