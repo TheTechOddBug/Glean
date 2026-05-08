@@ -6,6 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 #include <set>
 
@@ -182,6 +183,161 @@ TEST(AclTest, InvalidUsetSkipped) {
   augmentOwnershipWithACL(ownership, {makeAssignment(1, {{50}})});
 
   EXPECT_EQ(ownership.facts_[0].second, INVALID_USET);
+}
+
+// Verify that multi-level ACL assignments produce the correct CNF structure:
+// AND(owner, AND(OR(level1_groups), OR(level2_groups))).
+TEST(AclTest, MultiLevelCNF) {
+  constexpr UsetId kFirstSetId = 10;
+  Usets usets(kFirstSetId);
+
+  auto* ownerSet = makePromotedOrSet(usets, {1});
+
+  std::vector<std::pair<Id, UsetId>> facts = {
+      {Id::fromWord(100), ownerSet->id}};
+
+  ComputedOwnership ownership(std::move(usets), std::move(facts));
+
+  // Two ACL levels: level 0 has groups {50, 51}, level 1 has group {60}.
+  augmentOwnershipWithACL(ownership, {makeAssignment(1, {{50, 51}, {60}})});
+
+  auto result =
+      usetToString(ownership.sets_, ownership.facts_[0].second, kFirstSetId);
+
+  // The owner should be ANDed with the CNF of the two levels.
+  EXPECT_THAT(result, ::testing::HasSubstr("AND("));
+  EXPECT_THAT(result, ::testing::HasSubstr("OR(1)"));
+  EXPECT_THAT(result, ::testing::HasSubstr("OR(50, 51)"));
+  EXPECT_THAT(result, ::testing::HasSubstr("OR(60)"));
+}
+
+// Verify that when an owner set contains multiple units with different ACL
+// assignments, all ACL CNFs are collected and ANDed with the owner.
+TEST(AclTest, MultipleUnitsWithDifferentACLs) {
+  constexpr UsetId kFirstSetId = 10;
+  Usets usets(kFirstSetId);
+
+  auto* ownerSet = makePromotedOrSet(usets, {1, 2});
+
+  std::vector<std::pair<Id, UsetId>> facts = {
+      {Id::fromWord(100), ownerSet->id}};
+
+  ComputedOwnership ownership(std::move(usets), std::move(facts));
+
+  // Unit 1 has ACL group 50, unit 2 has ACL group 60.
+  augmentOwnershipWithACL(
+      ownership, {makeAssignment(1, {{50}}), makeAssignment(2, {{60}})});
+
+  auto result =
+      usetToString(ownership.sets_, ownership.facts_[0].second, kFirstSetId);
+
+  // Both ACL CNFs should appear in the augmented expression.
+  EXPECT_THAT(result, ::testing::HasSubstr("AND("));
+  EXPECT_THAT(result, ::testing::HasSubstr("OR(1, 2)"));
+  EXPECT_THAT(result, ::testing::HasSubstr("OR(50)"));
+  EXPECT_THAT(result, ::testing::HasSubstr("OR(60)"));
+}
+
+// Verify that the augment cache correctly reuses results when multiple facts
+// share the same owner UsetId.
+TEST(AclTest, CacheHitForSameOwner) {
+  constexpr UsetId kFirstSetId = 10;
+  Usets usets(kFirstSetId);
+
+  auto* ownerSet = makePromotedOrSet(usets, {1});
+
+  // Two facts with the same owner.
+  std::vector<std::pair<Id, UsetId>> facts = {
+      {Id::fromWord(100), ownerSet->id},
+      {Id::fromWord(200), ownerSet->id},
+  };
+
+  ComputedOwnership ownership(std::move(usets), std::move(facts));
+
+  augmentOwnershipWithACL(ownership, {makeAssignment(1, {{50}})});
+
+  // Both facts should have the same augmented UsetId (cache hit).
+  EXPECT_EQ(ownership.facts_[0].second, ownership.facts_[1].second);
+  EXPECT_EQ(
+      usetToString(ownership.sets_, ownership.facts_[0].second, kFirstSetId),
+      "AND(OR(1), OR(50))");
+}
+
+// Verify that a missing promoted set (ownerUsetId >= firstSetId but not in
+// Usets) throws a std::runtime_error rather than silently bypassing ACL.
+TEST(AclTest, MissingPromotedSetThrows) {
+  constexpr UsetId kFirstSetId = 10;
+  Usets usets(kFirstSetId);
+
+  // Use a UsetId >= firstSetId that was never added to the Usets container.
+  constexpr UsetId kBogusSetId = 999;
+
+  std::vector<std::pair<Id, UsetId>> facts = {{Id::fromWord(100), kBogusSetId}};
+
+  ComputedOwnership ownership(std::move(usets), std::move(facts));
+
+  EXPECT_THROW(
+      augmentOwnershipWithACL(ownership, {makeAssignment(1, {{50}})}),
+      std::runtime_error);
+}
+
+// Verify that assignments with empty levels are skipped without affecting
+// ownership.
+TEST(AclTest, AssignmentWithEmptyLevelsSkipped) {
+  constexpr UsetId kFirstSetId = 10;
+  Usets usets(kFirstSetId);
+
+  auto* ownerSet = makePromotedOrSet(usets, {1});
+
+  std::vector<std::pair<Id, UsetId>> facts = {
+      {Id::fromWord(100), ownerSet->id}};
+
+  ComputedOwnership ownership(std::move(usets), std::move(facts));
+
+  // Assignment for unit 1 with empty levels — should be skipped.
+  augmentOwnershipWithACL(ownership, {makeAssignment(1, {})});
+
+  EXPECT_EQ(ownership.facts_[0].second, ownerSet->id);
+}
+
+// Verify that empty inner level groups are skipped, and only non-empty levels
+// contribute to the CNF.
+TEST(AclTest, AssignmentWithEmptyInnerLevelSkipped) {
+  constexpr UsetId kFirstSetId = 10;
+  Usets usets(kFirstSetId);
+
+  auto* ownerSet = makePromotedOrSet(usets, {1});
+
+  std::vector<std::pair<Id, UsetId>> facts = {
+      {Id::fromWord(100), ownerSet->id}};
+
+  ComputedOwnership ownership(std::move(usets), std::move(facts));
+
+  // First inner level is empty (skipped), second has group 50.
+  augmentOwnershipWithACL(ownership, {makeAssignment(1, {{}, {50}})});
+
+  EXPECT_EQ(
+      usetToString(ownership.sets_, ownership.facts_[0].second, kFirstSetId),
+      "AND(OR(1), OR(50))");
+}
+
+// Verify that a raw leaf UnitId (below firstSetId) with a matching ACL
+// assignment is correctly augmented.
+TEST(AclTest, RawLeafUnitIdWithACLMatch) {
+  constexpr UsetId kFirstSetId = 10;
+  Usets usets(kFirstSetId);
+
+  // Fact owned by raw leaf UnitId 1 (below firstSetId).
+  std::vector<std::pair<Id, UsetId>> facts = {{Id::fromWord(100), 1}};
+
+  ComputedOwnership ownership(std::move(usets), std::move(facts));
+
+  augmentOwnershipWithACL(ownership, {makeAssignment(1, {{50}})});
+
+  // The raw leaf should be ANDed with the ACL CNF.
+  EXPECT_EQ(
+      usetToString(ownership.sets_, ownership.facts_[0].second, kFirstSetId),
+      "AND(1, OR(50))");
 }
 
 } // namespace facebook::glean::rts
