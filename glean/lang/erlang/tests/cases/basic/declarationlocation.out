@@ -7,13 +7,15 @@
           "key": {
             "name": "on_event",
             "arity": 1,
-            "module": "example",
+            "module": "example_behaviour",
             "app": "basic"
           }
         }
       },
-      "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 278, "length": 42 }
+      "file": {
+        "key": "glean/lang/erlang/tests/cases/basic/src/example_behaviour.erl"
+      },
+      "span": { "start": 29, "length": 42 }
     }
   },
   {
@@ -27,7 +29,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 578, "length": 23 }
+      "span": { "start": 544, "length": 23 }
     }
   },
   {
@@ -41,7 +43,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 677, "length": 71 }
+      "span": { "start": 643, "length": 71 }
     }
   },
   {
@@ -55,7 +57,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 789, "length": 39 }
+      "span": { "start": 755, "length": 39 }
     }
   },
   {
@@ -69,7 +71,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 444, "length": 58 }
+      "span": { "start": 410, "length": 58 }
     }
   },
   {
@@ -87,7 +89,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 1165, "length": 34 }
+      "span": { "start": 1131, "length": 34 }
     }
   },
   {
@@ -101,7 +103,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 955, "length": 28 }
+      "span": { "start": 921, "length": 28 }
     }
   },
   {
@@ -115,7 +117,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 1201, "length": 23 }
+      "span": { "start": 1199, "length": 23 }
     }
   },
   {
@@ -129,7 +131,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 985, "length": 178 }
+      "span": { "start": 951, "length": 178 }
     }
   },
   {
@@ -143,7 +145,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 880, "length": 39 }
+      "span": { "start": 846, "length": 39 }
     }
   },
   {
@@ -208,12 +210,31 @@
   {
     "key": {
       "declaration": {
+        "module_": {
+          "key": {
+            "file": {
+              "key": "glean/lang/erlang/tests/cases/basic/src/example_behaviour.erl"
+            },
+            "name": "example_behaviour",
+            "app": "basic"
+          }
+        }
+      },
+      "file": {
+        "key": "glean/lang/erlang/tests/cases/basic/src/example_behaviour.erl"
+      },
+      "span": { "start": 0, "length": 27 }
+    }
+  },
+  {
+    "key": {
+      "declaration": {
         "record_": {
           "key": { "name": "person", "module": "example", "app": "basic" }
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 222, "length": 54 }
+      "span": { "start": 232, "length": 54 }
     }
   },
   {
@@ -229,7 +250,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 257, "length": 16 }
+      "span": { "start": 267, "length": 16 }
     }
   },
   {
@@ -245,7 +266,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 239, "length": 16 }
+      "span": { "start": 249, "length": 16 }
     }
   },
   {
@@ -261,7 +282,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 168, "length": 52 }
+      "span": { "start": 178, "length": 52 }
     }
   }
 ]

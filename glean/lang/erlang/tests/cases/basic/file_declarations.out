@@ -126,5 +126,13 @@
         }
       ]
     }
+  },
+  {
+    "key": {
+      "file": {
+        "key": "glean/lang/erlang/tests/cases/basic/src/example_behaviour.erl"
+      },
+      "declarations": [ ]
+    }
   }
 ]

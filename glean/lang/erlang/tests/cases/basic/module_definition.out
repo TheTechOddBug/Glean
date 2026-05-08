@@ -61,7 +61,23 @@
           }
         }
       ],
-      "behaviours": [ "example" ],
+      "behaviours": [ "example_behaviour" ],
+      "compile_options": [ ]
+    }
+  },
+  {
+    "key": {
+      "declaration": {
+        "key": {
+          "file": {
+            "key": "glean/lang/erlang/tests/cases/basic/src/example_behaviour.erl"
+          },
+          "name": "example_behaviour",
+          "app": "basic"
+        }
+      },
+      "exports": [ ],
+      "behaviours": [ ],
       "compile_options": [ ]
     }
   }

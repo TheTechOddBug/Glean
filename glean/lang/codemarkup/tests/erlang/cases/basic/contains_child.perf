@@ -1,7 +1,7 @@
 {
   "@generated": null,
   "facts_searched": {
-    "erlang.DeclarationsByFile.2": 18,
+    "erlang.DeclarationsByFile.2": 19,
     "erlang.ModuleDeclaration.2": 14,
     "erlang.RecordDeclaration.2": 1,
     "erlang.RecordFieldDeclaration.2": 2

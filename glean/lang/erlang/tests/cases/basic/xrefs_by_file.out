@@ -13,7 +13,7 @@
               }
             }
           },
-          "source": { "start": 48, "length": 7 }
+          "source": { "start": 58, "length": 7 }
         },
         {
           "target": {
@@ -24,7 +24,7 @@
               }
             }
           },
-          "source": { "start": 57, "length": 5 }
+          "source": { "start": 67, "length": 5 }
         },
         {
           "target": {
@@ -35,7 +35,7 @@
               }
             }
           },
-          "source": { "start": 64, "length": 11 }
+          "source": { "start": 74, "length": 11 }
         },
         {
           "target": {
@@ -46,7 +46,7 @@
               }
             }
           },
-          "source": { "start": 77, "length": 10 }
+          "source": { "start": 87, "length": 10 }
         },
         {
           "target": {
@@ -57,7 +57,7 @@
               }
             }
           },
-          "source": { "start": 89, "length": 9 }
+          "source": { "start": 99, "length": 9 }
         },
         {
           "target": {
@@ -72,7 +72,7 @@
               }
             }
           },
-          "source": { "start": 100, "length": 14 }
+          "source": { "start": 110, "length": 14 }
         },
         {
           "target": {
@@ -83,7 +83,7 @@
               }
             }
           },
-          "source": { "start": 116, "length": 9 }
+          "source": { "start": 126, "length": 9 }
         },
         {
           "target": {
@@ -94,13 +94,13 @@
               }
             }
           },
-          "source": { "start": 127, "length": 10 }
+          "source": { "start": 137, "length": 10 }
         },
         {
           "target": {
             "header_": { "key": { "name": "example.hrl", "app": "basic" } }
           },
-          "source": { "start": 142, "length": 24 }
+          "source": { "start": 152, "length": 24 }
         },
         {
           "target": {
@@ -113,7 +113,7 @@
               }
             }
           },
-          "source": { "start": 195, "length": 4 }
+          "source": { "start": 205, "length": 4 }
         },
         {
           "target": {
@@ -126,7 +126,7 @@
               }
             }
           },
-          "source": { "start": 212, "length": 4 }
+          "source": { "start": 222, "length": 4 }
         },
         {
           "target": {
@@ -139,7 +139,7 @@
               }
             }
           },
-          "source": { "start": 247, "length": 6 }
+          "source": { "start": 257, "length": 6 }
         },
         {
           "target": {
@@ -152,20 +152,7 @@
               }
             }
           },
-          "source": { "start": 264, "length": 7 }
-        },
-        {
-          "target": {
-            "type_": {
-              "key": {
-                "name": "term",
-                "arity": 0,
-                "module": "erlang",
-                "app": "erts"
-              }
-            }
-          },
-          "source": { "start": 306, "length": 4 }
+          "source": { "start": 274, "length": 7 }
         },
         {
           "target": {
@@ -180,7 +167,7 @@
               }
             }
           },
-          "source": { "start": 336, "length": 12 }
+          "source": { "start": 302, "length": 12 }
         },
         {
           "target": {
@@ -193,7 +180,7 @@
               }
             }
           },
-          "source": { "start": 427, "length": 6 }
+          "source": { "start": 393, "length": 6 }
         },
         {
           "target": {
@@ -204,7 +191,7 @@
               }
             }
           },
-          "source": { "start": 463, "length": 9 }
+          "source": { "start": 429, "length": 9 }
         },
         {
           "target": {
@@ -216,7 +203,7 @@
               }
             }
           },
-          "source": { "start": 488, "length": 5 }
+          "source": { "start": 454, "length": 5 }
         },
         {
           "target": {
@@ -229,7 +216,7 @@
               }
             }
           },
-          "source": { "start": 545, "length": 6 }
+          "source": { "start": 511, "length": 6 }
         },
         {
           "target": {
@@ -242,7 +229,7 @@
               }
             }
           },
-          "source": { "start": 555, "length": 6 }
+          "source": { "start": 521, "length": 6 }
         },
         {
           "target": {
@@ -255,7 +242,7 @@
               }
             }
           },
-          "source": { "start": 568, "length": 6 }
+          "source": { "start": 534, "length": 6 }
         },
         {
           "target": {
@@ -268,7 +255,7 @@
               }
             }
           },
-          "source": { "start": 654, "length": 6 }
+          "source": { "start": 620, "length": 6 }
         },
         {
           "target": {
@@ -281,7 +268,7 @@
               }
             }
           },
-          "source": { "start": 667, "length": 6 }
+          "source": { "start": 633, "length": 6 }
         },
         {
           "target": {
@@ -292,7 +279,7 @@
               }
             }
           },
-          "source": { "start": 731, "length": 9 }
+          "source": { "start": 697, "length": 9 }
         },
         {
           "target": {
@@ -300,7 +287,7 @@
               "key": { "name": "person", "module": "example", "app": "basic" }
             }
           },
-          "source": { "start": 765, "length": 7 }
+          "source": { "start": 731, "length": 7 }
         },
         {
           "target": {
@@ -313,7 +300,7 @@
               }
             }
           },
-          "source": { "start": 779, "length": 6 }
+          "source": { "start": 745, "length": 6 }
         },
         {
           "target": {
@@ -326,7 +313,7 @@
               }
             }
           },
-          "source": { "start": 806, "length": 4 }
+          "source": { "start": 772, "length": 4 }
         },
         {
           "target": {
@@ -334,7 +321,7 @@
               "key": { "name": "person", "module": "example", "app": "basic" }
             }
           },
-          "source": { "start": 798, "length": 7 }
+          "source": { "start": 764, "length": 7 }
         },
         {
           "target": {
@@ -342,7 +329,7 @@
               "key": { "name": "person", "module": "example", "app": "basic" }
             }
           },
-          "source": { "start": 844, "length": 7 }
+          "source": { "start": 810, "length": 7 }
         },
         {
           "target": {
@@ -355,7 +342,7 @@
               }
             }
           },
-          "source": { "start": 855, "length": 7 }
+          "source": { "start": 821, "length": 7 }
         },
         {
           "target": {
@@ -363,7 +350,7 @@
               "key": { "name": "person", "module": "example", "app": "basic" }
             }
           },
-          "source": { "start": 869, "length": 7 }
+          "source": { "start": 835, "length": 7 }
         },
         {
           "target": {
@@ -376,7 +363,7 @@
               }
             }
           },
-          "source": { "start": 908, "length": 3 }
+          "source": { "start": 874, "length": 3 }
         },
         {
           "target": {
@@ -384,7 +371,7 @@
               "key": { "name": "person", "module": "example", "app": "basic" }
             }
           },
-          "source": { "start": 900, "length": 7 }
+          "source": { "start": 866, "length": 7 }
         },
         {
           "target": {
@@ -397,7 +384,7 @@
               }
             }
           },
-          "source": { "start": 940, "length": 4 }
+          "source": { "start": 906, "length": 4 }
         },
         {
           "target": {
@@ -408,7 +395,7 @@
               }
             }
           },
-          "source": { "start": 974, "length": 5 }
+          "source": { "start": 940, "length": 5 }
         },
         {
           "target": {
@@ -421,7 +408,7 @@
               }
             }
           },
-          "source": { "start": 1014, "length": 4 }
+          "source": { "start": 980, "length": 4 }
         },
         {
           "target": {
@@ -434,7 +421,7 @@
               }
             }
           },
-          "source": { "start": 1030, "length": 3 }
+          "source": { "start": 996, "length": 3 }
         },
         {
           "target": {
@@ -442,7 +429,7 @@
               "key": { "name": "person", "module": "example", "app": "basic" }
             }
           },
-          "source": { "start": 1006, "length": 7 }
+          "source": { "start": 972, "length": 7 }
         },
         {
           "target": {
@@ -453,7 +440,7 @@
               }
             }
           },
-          "source": { "start": 1050, "length": 7 }
+          "source": { "start": 1016, "length": 7 }
         },
         {
           "target": {
@@ -464,7 +451,7 @@
               }
             }
           },
-          "source": { "start": 1077, "length": 8 }
+          "source": { "start": 1043, "length": 8 }
         },
         {
           "target": {
@@ -475,7 +462,7 @@
               }
             }
           },
-          "source": { "start": 1095, "length": 5 }
+          "source": { "start": 1061, "length": 5 }
         },
         {
           "target": {
@@ -486,7 +473,7 @@
               }
             }
           },
-          "source": { "start": 1112, "length": 3 }
+          "source": { "start": 1078, "length": 3 }
         },
         {
           "target": {
@@ -497,7 +484,7 @@
               }
             }
           },
-          "source": { "start": 1127, "length": 9 }
+          "source": { "start": 1093, "length": 9 }
         },
         {
           "target": {
@@ -512,7 +499,7 @@
               }
             }
           },
-          "source": { "start": 1145, "length": 15 }
+          "source": { "start": 1111, "length": 15 }
         },
         {
           "target": {
@@ -525,7 +512,20 @@
               }
             }
           },
-          "source": { "start": 1187, "length": 7 }
+          "source": { "start": 1153, "length": 7 }
+        },
+        {
+          "target": {
+            "type_": {
+              "key": {
+                "name": "config",
+                "arity": 0,
+                "module": "example",
+                "app": "basic"
+              }
+            }
+          },
+          "source": { "start": 1182, "length": 6 }
         },
         {
           "target": {
@@ -533,12 +533,34 @@
               "key": {
                 "name": "on_event",
                 "arity": 1,
-                "module": "example",
+                "module": "example_behaviour",
                 "app": "basic"
               }
             }
           },
-          "source": { "start": 1201, "length": 23 }
+          "source": { "start": 1199, "length": 23 }
+        }
+      ]
+    }
+  },
+  {
+    "key": {
+      "file": {
+        "key": "glean/lang/erlang/tests/cases/basic/src/example_behaviour.erl"
+      },
+      "xrefs": [
+        {
+          "target": {
+            "type_": {
+              "key": {
+                "name": "term",
+                "arity": 0,
+                "module": "erlang",
+                "app": "erts"
+              }
+            }
+          },
+          "source": { "start": 57, "length": 4 }
         }
       ]
     }

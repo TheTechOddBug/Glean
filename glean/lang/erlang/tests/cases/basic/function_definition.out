@@ -94,7 +94,8 @@
       },
       "exported": true,
       "is_on_load": false,
-      "is_nif": false
+      "is_nif": false,
+      "spec_text": "-spec on_event(config()) -> ok."
     }
   },
   {

@@ -1,5 +1,5 @@
 {
   "@generated": null,
-  "facts_searched": { "erlang.DeclarationUses.1": 50 },
+  "facts_searched": { "erlang.DeclarationUses.1": 52 },
   "full_scans": [ "erlang.DeclarationUses.1" ]
 }

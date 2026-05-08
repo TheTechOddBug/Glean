@@ -18,7 +18,7 @@
             "key": {
               "app": "basic",
               "arity": 1,
-              "module": "example",
+              "module": "example_behaviour",
               "name": "on_event"
             }
           }
@@ -47,9 +47,9 @@
             "key": {
               "app": "basic",
               "file": {
-                "key": "glean/lang/erlang/tests/cases/basic/src/example.erl"
+                "key": "glean/lang/erlang/tests/cases/basic/src/example_behaviour.erl"
               },
-              "name": "example"
+              "name": "example_behaviour"
             }
           }
         }

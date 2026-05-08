@@ -1,5 +1,5 @@
 -module(example).
--behaviour(example).
+-behaviour(example_behaviour).
 -export([hello/1, add/2, factorial/1, get_name/1, set_age/2, old_function/1, run_all/0, on_event/1]).
 
 -include("example.hrl").
@@ -7,8 +7,6 @@
 -type config() :: #{key := atom(), value := term()}.
 
 -record(person, {name :: string(), age :: integer()}).
-
--callback on_event(Event :: term()) -> ok.
 
 -deprecated([{old_function, 1, "use hello/1 instead"}]).
 
@@ -52,4 +50,5 @@ run_all() ->
 
 internal_helper() -> ?ADD_ONE(41).
 
+-spec on_event(config()) -> ok.
 on_event(_Event) -> ok.

@@ -11,7 +11,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 504, "length": 30 },
+      "span": { "start": 470, "length": 30 },
       "text": "-doc \"\"\"\u000aAdds two numbers\u000a\"\"\"."
     }
   },
@@ -26,7 +26,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 535, "length": 42 },
+      "span": { "start": 501, "length": 42 },
       "text": "```erlang\u000a-spec add(number(), number()) -> number().\u000a```"
     }
   },
@@ -41,7 +41,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 603, "length": 34 },
+      "span": { "start": 569, "length": 34 },
       "text": "-doc \"\"\"\u000aCalculates factorial\u000a\"\"\"."
     }
   },
@@ -56,7 +56,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 638, "length": 38 },
+      "span": { "start": 604, "length": 38 },
       "text": "```erlang\u000a-spec factorial(number()) -> number().\u000a```"
     }
   },
@@ -71,7 +71,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 750, "length": 38 },
+      "span": { "start": 716, "length": 38 },
       "text": "```erlang\u000a-spec get_name(#person{}) -> string().\u000a```"
     }
   },
@@ -86,7 +86,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 380, "length": 34 },
+      "span": { "start": 346, "length": 34 },
       "text": "-doc \"This is the hello function\"."
     }
   },
@@ -101,7 +101,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 415, "length": 28 },
+      "span": { "start": 381, "length": 28 },
       "text": "```erlang\u000a-spec hello(string()) -> ok.\u000a```"
     }
   },
@@ -116,8 +116,23 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 921, "length": 33 },
+      "span": { "start": 887, "length": 33 },
       "text": "```erlang\u000a-spec old_function(term()) -> ok.\u000a```"
+    }
+  },
+  {
+    "key": {
+      "declaration": {
+        "func": {
+          "key": {
+            "fqn": { "module": "example", "name": "on_event", "arity": 1 },
+            "app": "basic"
+          }
+        }
+      },
+      "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
+      "span": { "start": 1167, "length": 31 },
+      "text": "```erlang\u000a-spec on_event(config()) -> ok.\u000a```"
     }
   },
   {
@@ -131,7 +146,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 830, "length": 49 },
+      "span": { "start": 796, "length": 49 },
       "text": "```erlang\u000a-spec set_age(#person{}, integer()) -> #person{}.\u000a```"
     }
   },
@@ -143,7 +158,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 222, "length": 54 },
+      "span": { "start": 232, "length": 54 },
       "text": "```erlang\u000a-record(person, {name :: string(), age :: integer()}).\u000a```"
     }
   },
@@ -160,7 +175,7 @@
         }
       },
       "file": { "key": "glean/lang/erlang/tests/cases/basic/src/example.erl" },
-      "span": { "start": 168, "length": 52 },
+      "span": { "start": 178, "length": 52 },
       "text": "```erlang\u000a-type config() :: #{key := atom(), value := term()}.\u000a```"
     }
   }
