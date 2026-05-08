@@ -1166,9 +1166,14 @@ getSymbolAttributes env dbInfo repo opts repofile mlimit
     getLatestAttrDBs tracer (sourceControl env) (Glass.repoMapping env)
       dbInfo repo mlanguage
   backendRunHaxl be env $ do
-    attrsTuples <- forM mAttrDBs $
-      \(attrDB, GleanDBAttrName _ attrKey{- existential key -}) ->
-        withRepo attrDB $ do
+    -- An individual attr DB may be missing from Glean (e.g. dropped after a
+    -- broken pipeline left it stale; see S660964). Catch per-DB so a single
+    -- failure doesn't take down the whole symbol-list response. Glean fetches
+    -- go through `dataFetch`, which propagates IO exceptions into the Haxl
+    -- monad so `Haxl.try` can catch them.
+    attrsTuples <- fmap catMaybes $ forM mAttrDBs $
+      \(attrDB, GleanDBAttrName _ attrKey{- existential key -}) -> do
+        result <- Haxl.try $ withRepo attrDB $ do
           (attrs,fileAttrs,_merr2) <- genericFetchFileAttributes
             attrKey
             (theGleanPath repofile)
@@ -1189,6 +1194,9 @@ getSymbolAttributes env dbInfo repo opts repofile mlimit
                f -> Attributes.fileAttrsToAttributeList attrKey f
 
           return (augment, fileAttributes)
+        case result of
+          Right ok -> return (Just ok)
+          Left (_ :: SomeException) -> return Nothing
 
     let (augments, fileAttrs) = unzip attrsTuples
     return (augments, fileAttrs)
