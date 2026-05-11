@@ -470,7 +470,7 @@
           "file": {
             "key": "glean/lang/erlang/tests/cases/basic/include/example.hrl"
           },
-          "location": { "span": { "length": 1, "start": 0 } },
+          "location": { "span": { "length": 48, "start": 0 } },
           "name": "example.hrl"
         }
       }

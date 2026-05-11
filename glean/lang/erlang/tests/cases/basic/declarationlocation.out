@@ -156,7 +156,7 @@
       "file": {
         "key": "glean/lang/erlang/tests/cases/basic/include/example.hrl"
       },
-      "span": { "start": 0, "length": 1 }
+      "span": { "start": 0, "length": 48 }
     }
   },
   {

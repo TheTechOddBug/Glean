@@ -208,7 +208,7 @@
         "header_": { "key": { "name": "shared.hrl", "app": "app_a" } }
       },
       "file": { "key": "app_a/include/shared.hrl" },
-      "span": { "start": 0, "length": 1 }
+      "span": { "start": 0, "length": 142 }
     }
   },
   {

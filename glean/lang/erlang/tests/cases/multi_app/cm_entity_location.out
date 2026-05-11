@@ -80,14 +80,14 @@
                 "module": "shared.hrl",
                 "name": "shared.hrl"
               },
-              "span": { "length": 1, "start": 0 }
+              "span": { "length": 142, "start": 0 }
             }
           }
         }
       },
       "location": {
         "file": { "key": "app_a/include/shared.hrl" },
-        "location": { "span": { "length": 1, "start": 0 } },
+        "location": { "span": { "length": 142, "start": 0 } },
         "name": "shared.hrl"
       }
     }

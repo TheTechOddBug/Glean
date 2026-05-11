@@ -997,7 +997,7 @@
                 "module": "example.hrl",
                 "name": "example.hrl"
               },
-              "span": { "length": 1, "start": 0 }
+              "span": { "length": 48, "start": 0 }
             }
           }
         }

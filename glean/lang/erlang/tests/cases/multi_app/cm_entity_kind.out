@@ -68,7 +68,7 @@
                 "module": "shared.hrl",
                 "name": "shared.hrl"
               },
-              "span": { "length": 1, "start": 0 }
+              "span": { "length": 142, "start": 0 }
             }
           }
         }
