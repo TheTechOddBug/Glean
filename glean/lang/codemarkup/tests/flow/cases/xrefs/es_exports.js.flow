@@ -30,7 +30,8 @@ export default d;
 export type num = number;
 
 export type MyT = {
-  field1: number
+  field1: number,
+  ...
 }
 
 export component Introduction(name: string) {

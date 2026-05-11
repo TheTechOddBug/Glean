@@ -10,7 +10,7 @@
           "loc": {
             "key": {
               "module": { "key": { "file": { "key": "es_exports.js.flow" } } },
-              "span": { "start": 632, "length": 1 }
+              "span": { "start": 639, "length": 1 }
             }
           }
         }

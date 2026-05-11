@@ -51,25 +51,25 @@
   {
     "key": {
       "tuplefield0": { "key": "es_exports.js.flow" },
-      "tuplefield1": { "start": 501, "length": 31 }
+      "tuplefield1": { "start": 501, "length": 38 }
     }
   },
   {
     "key": {
       "tuplefield0": { "key": "es_exports.js.flow" },
-      "tuplefield1": { "start": 541, "length": 76 }
+      "tuplefield1": { "start": 548, "length": 76 }
     }
   },
   {
     "key": {
       "tuplefield0": { "key": "es_exports.js.flow" },
-      "tuplefield1": { "start": 564, "length": 4 }
+      "tuplefield1": { "start": 571, "length": 4 }
     }
   },
   {
     "key": {
       "tuplefield0": { "key": "es_exports.js.flow" },
-      "tuplefield1": { "start": 626, "length": 10 }
+      "tuplefield1": { "start": 633, "length": 10 }
     }
   }
 ]

@@ -65,7 +65,7 @@
                     "module": {
                       "key": { "file": { "key": "es_exports.js.flow" } }
                     },
-                    "span": { "start": 632, "length": 1 }
+                    "span": { "start": 639, "length": 1 }
                   }
                 }
               }
@@ -141,7 +141,7 @@
                     "module": {
                       "key": { "file": { "key": "es_exports.js.flow" } }
                     },
-                    "span": { "start": 551, "length": 12 }
+                    "span": { "start": 558, "length": 12 }
                   }
                 }
               }
@@ -449,7 +449,7 @@
                     "module": {
                       "key": { "file": { "key": "es_exports.js.flow" } }
                     },
-                    "span": { "start": 564, "length": 4 }
+                    "span": { "start": 571, "length": 4 }
                   }
                 }
               }
@@ -1005,7 +1005,7 @@
                     "module": {
                       "key": { "file": { "key": "es_exports.js.flow" } }
                     },
-                    "span": { "start": 632, "length": 1 }
+                    "span": { "start": 639, "length": 1 }
                   }
                 }
               }

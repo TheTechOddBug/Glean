@@ -117,7 +117,7 @@
             "target": {
               "name": "C",
               "file": { "key": "es_exports.js.flow" },
-              "location": { "span": { "start": 632, "length": 1 } }
+              "location": { "span": { "start": 639, "length": 1 } }
             },
             "source": { "span": { "start": 799, "length": 1 } }
           },
@@ -132,7 +132,7 @@
                         "module": {
                           "key": { "file": { "key": "es_exports.js.flow" } }
                         },
-                        "span": { "start": 632, "length": 1 }
+                        "span": { "start": 639, "length": 1 }
                       }
                     }
                   }
@@ -153,7 +153,7 @@
             "target": {
               "name": "C",
               "file": { "key": "es_exports.js.flow" },
-              "location": { "span": { "start": 632, "length": 1 } }
+              "location": { "span": { "start": 639, "length": 1 } }
             },
             "source": { "span": { "start": 833, "length": 1 } }
           },
@@ -168,7 +168,7 @@
                         "module": {
                           "key": { "file": { "key": "es_exports.js.flow" } }
                         },
-                        "span": { "start": 632, "length": 1 }
+                        "span": { "start": 639, "length": 1 }
                       }
                     }
                   }

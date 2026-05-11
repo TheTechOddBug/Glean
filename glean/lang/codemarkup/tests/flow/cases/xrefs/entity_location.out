@@ -124,7 +124,7 @@
                     "module": {
                       "key": { "file": { "key": "es_exports.js.flow" } }
                     },
-                    "span": { "length": 1, "start": 632 }
+                    "span": { "length": 1, "start": 639 }
                   }
                 },
                 "name": { "key": "C" }
@@ -135,7 +135,7 @@
       },
       "location": {
         "file": { "key": "es_exports.js.flow" },
-        "location": { "span": { "length": 10, "start": 626 } },
+        "location": { "span": { "length": 10, "start": 633 } },
         "name": "C"
       }
     }
@@ -208,7 +208,7 @@
                     "module": {
                       "key": { "file": { "key": "es_exports.js.flow" } }
                     },
-                    "span": { "length": 4, "start": 564 }
+                    "span": { "length": 4, "start": 571 }
                   }
                 },
                 "name": { "key": "name" }
@@ -219,7 +219,7 @@
       },
       "location": {
         "file": { "key": "es_exports.js.flow" },
-        "location": { "span": { "length": 4, "start": 564 } },
+        "location": { "span": { "length": 4, "start": 571 } },
         "name": "name"
       }
     }
@@ -292,7 +292,7 @@
                     "module": {
                       "key": { "file": { "key": "es_exports.js.flow" } }
                     },
-                    "span": { "length": 12, "start": 551 }
+                    "span": { "length": 12, "start": 558 }
                   }
                 },
                 "name": { "key": "Introduction" }
@@ -303,7 +303,7 @@
       },
       "location": {
         "file": { "key": "es_exports.js.flow" },
-        "location": { "span": { "length": 76, "start": 541 } },
+        "location": { "span": { "length": 76, "start": 548 } },
         "name": "Introduction"
       }
     }
@@ -1012,7 +1012,7 @@
                     "module": {
                       "key": { "file": { "key": "es_exports.js.flow" } }
                     },
-                    "span": { "length": 1, "start": 632 }
+                    "span": { "length": 1, "start": 639 }
                   }
                 },
                 "name": { "key": "C" }
@@ -1023,7 +1023,7 @@
       },
       "location": {
         "file": { "key": "es_exports.js.flow" },
-        "location": { "span": { "length": 10, "start": 626 } },
+        "location": { "span": { "length": 10, "start": 633 } },
         "name": "C"
       }
     }
@@ -1079,7 +1079,7 @@
       },
       "location": {
         "file": { "key": "es_exports.js.flow" },
-        "location": { "span": { "length": 31, "start": 501 } },
+        "location": { "span": { "length": 38, "start": 501 } },
         "name": "MyT"
       }
     }
