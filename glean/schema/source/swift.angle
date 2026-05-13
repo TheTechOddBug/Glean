@@ -64,4 +64,11 @@ predicate FileXLangSymbolRef:
   scip.ReferenceLocation { File, Range, { symbol = Symbol } };
   swift.SymbolLanguage { symbol = Symbol, language = ObjectiveC };
 
+# A reference enclosed by a symbol, e.g., ref is called within body of enclosingSymbol
+predicate ReferenceEnclosingSymbol:
+  {
+    ref: scip.Reference,
+    enclosingSymbol: scip.Symbol,
+  }
+
 }
