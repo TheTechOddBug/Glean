@@ -24,6 +24,7 @@ import qualified Glean.Schema.CodeScip.Types as Scip
 
 import Glean.Glass.Pretty.Angle as Angle ( prettyAngleSignature )
 import Glean.Glass.Pretty.Cxx as Cxx ( prettyCxxSignature, Qualified(..) )
+import Glean.Glass.Pretty.Erlang as Erlang ( prettyErlangSignature )
 import Glean.Glass.Pretty.Flow as Flow ( prettyFlowSignature )
 import Glean.Glass.Pretty.Hack as Hack ( prettyHackSignature )
 import Glean.Glass.Pretty.Haskell as Haskell ( prettyHaskellSignature )
@@ -174,5 +175,7 @@ instance ToSymbolSignature Code.Entity where
       Lsif.Entity_swift x -> LSIF.prettyLsifSignature opts x
       Lsif.Entity_typescript x -> LSIF.prettyLsifSignature opts x
       Lsif.Entity_EMPTY -> pure Nothing
+    -- erlang pretty signatures
+    Code.Entity_erlang x -> Erlang.prettyErlangSignature opts x
     -- otherwise
     _ -> return Nothing

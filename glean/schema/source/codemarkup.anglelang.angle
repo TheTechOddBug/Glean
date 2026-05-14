@@ -3,7 +3,6 @@
 schema codemarkup.anglelang.1 {
     import src
     import anglelang
-    import code
     import code.anglelang
     import codemarkup.types
 

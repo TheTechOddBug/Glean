@@ -1472,6 +1472,7 @@ library glass-lib
         Glean.Glass.Path
         Glean.Glass.Pretty.Angle
         Glean.Glass.Pretty.Cxx
+        Glean.Glass.Pretty.Erlang
         Glean.Glass.Pretty.Flow
         Glean.Glass.Pretty.Fbthrift
         Glean.Glass.Pretty.Hack

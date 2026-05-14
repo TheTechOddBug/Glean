@@ -1,3 +1,3 @@
-query: erlang.DeclarationTarget.2 _
+query: erlang.DeclarationTarget _
 perf: True
 transform: [gensort, []]

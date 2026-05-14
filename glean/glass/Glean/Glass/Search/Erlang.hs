@@ -23,29 +23,94 @@ import Glean.Glass.Query ( entityLocation )
 
 import qualified Glean.Schema.CodeErlang.Types as Erlang
 import qualified Glean.Schema.CodemarkupTypes.Types as Code
+import qualified Glean.Schema.Erlang.Types as ErlangSchema
 import qualified Glean.Schema.SearchErlang.Types as Erlang
 import qualified Glean.Schema.Src.Types as Src
 import Text.Read ( readMaybe )
 import Data.Word ( Word64 )
 
-instance Search (ResultLocation Erlang.Entity_1) where
+instance Search (ResultLocation Erlang.Entity) where
   symbolSearch toks
+    | ["define", _app, _module, name, _arity] <- toks =
+        searchSymbolId toks $ searchByNameAndKind "define" name
+    | ["record", _app, _module, name] <- toks =
+        searchSymbolId toks $ searchByNameAndKind "record" name
+    | ["type", _app, _module, name, _arity] <- toks =
+        searchSymbolId toks $ searchByNameAndKind "type" name
+    | ["header", _app, name] <- toks =
+        searchSymbolId toks $ searchByNameAndKind "header" name
+    | ["module", _app, name] <- toks =
+        searchSymbolId toks $ searchByNameAndKind "module" name
+    | ["callback", _app, _module, name, _arity] <- toks =
+        searchSymbolId toks $ searchByNameAndKind "callback" name
+    | ["record_field", _app, _module, _recName, fieldName] <- toks =
+        searchSymbolId toks $ searchByNameAndKind "record_field" fieldName
+    | ["macro_usage", _app, _module, name, _arity, _contentHash] <- toks =
+        searchSymbolId toks $ searchByNameAndKind "macro_usage" name
+    | ["var", app, module_, name, spanStartStr] <- toks
+    , Just spanStart <- readMaybe $ unpack spanStartStr =
+        searchSymbolId toks $ searchVarByKey name module_ app spanStart
+    | ["var", _app, _module, name, _spanStart] <- toks =
+        searchSymbolId toks $ searchByNameAndKind "var" name
+    | [_app, module_, name, arity] <- toks
+    , Just arityNum <- readMaybe $ unpack arity =
+        searchSymbolId toks $ searchByFQN module_ name arityNum
+    | ["define", _module, name] <- toks =
+        searchSymbolId toks $ searchByNameAndKind "define" name
+    | ["record", _module, name] <- toks =
+        searchSymbolId toks $ searchByNameAndKind "record" name
+    | ["type", _module, name] <- toks =
+        searchSymbolId toks $ searchByNameAndKind "type" name
+    | ["header", name] <- toks =
+        searchSymbolId toks $ searchByNameAndKind "header" name
     | [module_, name, arity] <- toks
-    , Just arityNum <- readMaybe $ unpack arity = do
+    , Just arityNum <- readMaybe $ unpack arity =
         searchSymbolId toks $ searchByFQN module_ name arityNum
     | otherwise = return $ None "Erlang.symbolSearch: invalid query"
 
-searchByFQN :: Text -> Text -> Word64 -> Angle (ResultLocation Erlang.Entity_1)
+searchByFQN :: Text -> Text -> Word64 -> Angle (ResultLocation Erlang.Entity)
 searchByFQN module_ name arity =
-  vars $ \(ent :: Angle Erlang.Entity_1) (file :: Angle Src.File)
+  vars $ \(ent :: Angle Erlang.Entity) (file :: Angle Src.File)
     (rangespan :: Angle Code.RangeSpan) (lname :: Angle Text) ->
   tuple (ent, file, rangespan, lname) `where_` [
-    wild .= predicate @Erlang.SearchByFQN_4 (
+    wild .= predicate @Erlang.SearchByFQN (
       rec $
         field @"module" (string module_) $
         field @"name" (string name) $
         field @"arity" (nat arity) $
         field @"entity" ent
       end),
+    entityLocation (alt @"erlang" ent) file rangespan lname
+  ]
+
+searchByNameAndKind :: Text -> Text -> Angle (ResultLocation Erlang.Entity)
+searchByNameAndKind kind name =
+  vars $ \(ent :: Angle Erlang.Entity) (file :: Angle Src.File)
+    (rangespan :: Angle Code.RangeSpan) (lname :: Angle Text) ->
+  tuple (ent, file, rangespan, lname) `where_` [
+    wild .= predicate @Erlang.SearchByNameAndKind (
+      rec $
+        field @"kind" (string kind) $
+        field @"name" (string name) $
+        field @"entity" ent
+      end),
+    entityLocation (alt @"erlang" ent) file rangespan lname
+  ]
+
+searchVarByKey
+  :: Text -> Text -> Text -> Word64 -> Angle (ResultLocation Erlang.Entity)
+searchVarByKey name module_ app spanStart =
+  vars $ \(ent :: Angle Erlang.Entity) (file :: Angle Src.File)
+    (rangespan :: Angle Code.RangeSpan) (lname :: Angle Text)
+    (decl :: Angle ErlangSchema.VarDeclaration) ->
+  tuple (ent, file, rangespan, lname) `where_` [
+    decl .= predicate @ErlangSchema.VarDeclaration (
+      rec $
+        field @"name" (string name) $
+        field @"module" (string module_) $
+        field @"app" (string app) $
+        field @"span_start" (nat spanStart)
+      end),
+    ent .= alt @"var_" (asPredicate decl),
     entityLocation (alt @"erlang" ent) file rangespan lname
   ]

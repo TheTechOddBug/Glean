@@ -1,3 +1,3 @@
-query: erlang.RecordDefinition.2 _
+query: erlang.RecordDefinition _
 perf: True
 transform: [gensort, []]

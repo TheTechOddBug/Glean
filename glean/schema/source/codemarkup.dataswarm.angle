@@ -2,7 +2,6 @@
 
 schema codemarkup.dataswarm.1 {
     import src
-    import code.24
     import code.dataswarm
     import codemarkup.types
     import dataswarm

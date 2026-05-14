@@ -1,7 +1,6 @@
 schema codemarkup.chef.1 {
 import src
 import chef
-import code
 import code.chef
 import codemarkup.types
 

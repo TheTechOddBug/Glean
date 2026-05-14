@@ -1,3 +1,3 @@
-query: erlang.CallbackDefinition.2 _
+query: erlang.CallbackDefinition _
 perf: True
 transform: [gensort, []]

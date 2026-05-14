@@ -529,10 +529,27 @@ instance ToAngleFull a => ToAngleFull [a] where
 
 -- Erlang
 
-instance ToAngle Erlang.Declaration_1 where
+instance ToAngle Erlang.Declaration where
   toAngle d = case d of
-    Erlang.Declaration_1_func x -> alt @"func" (mkKey x)
-    Erlang.Declaration_1_EMPTY -> error "unknown Declaration"
+    Erlang.Declaration_func x -> alt @"func" (mkKey x)
+    Erlang.Declaration_macro_ x -> alt @"macro_" (mkKey x)
+    Erlang.Declaration_record_ x -> alt @"record_" (mkKey x)
+    Erlang.Declaration_type_ x -> alt @"type_" (mkKey x)
+    Erlang.Declaration_header_ x -> alt @"header_" (mkKey x)
+    Erlang.Declaration_callback_ x -> alt @"callback_" (mkKey x)
+    Erlang.Declaration_record_field x -> alt @"record_field" (mkKey x)
+    Erlang.Declaration_module_ x -> alt @"module_" (mkKey x)
+    Erlang.Declaration_EMPTY -> error "unknown Declaration"
+
+instance ToAngle Erlang.Definition where
+  toAngle d = case d of
+    Erlang.Definition_func x -> alt @"func" (mkKey x)
+    Erlang.Definition_macro_ x -> alt @"macro_" (mkKey x)
+    Erlang.Definition_record_ x -> alt @"record_" (mkKey x)
+    Erlang.Definition_type_ x -> alt @"type_" (mkKey x)
+    Erlang.Definition_callback_ x -> alt @"callback_" (mkKey x)
+    Erlang.Definition_module_ x -> alt @"module_" (mkKey x)
+    Erlang.Definition_EMPTY -> error "unknown Definition"
 
 -- Angle
 instance ToAngle Anglelang.Entity where
