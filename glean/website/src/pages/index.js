@@ -18,16 +18,58 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: 'Rich types',
-    description: <>Store detailed information about code</>,
+    title: 'Semantic code graph',
+    description: (
+      <>
+        Definitions, references, call graphs, type hierarchies, and
+        cross-language links — not text matching.
+      </>
+    ),
   },
   {
-    title: 'Compact storage',
-    description: <>Store data about code at scale</>,
+    title: 'Multi-language',
+    description: (
+      <>
+        Indexers for C++, Hack, Python, Haskell, Flow, .NET, Go, Java, Rust, and
+        TypeScript.
+      </>
+    ),
   },
   {
-    title: 'Efficient queries',
-    description: <>Build experiences with deep insights from code</>,
+    title: 'Built for scale',
+    description: (
+      <>
+        Compact, incremental storage designed to index monorepos with billions
+        of facts.
+      </>
+    ),
+  },
+  {
+    title: 'Angle query language',
+    description: (
+      <>
+        A typed, declarative query language for composing precise questions over
+        the code graph.
+      </>
+    ),
+  },
+  {
+    title: 'Agent- and tool-friendly',
+    description: (
+      <>
+        Query via CLI, language-specific APIs or Thrift — ideal for IDEs, code
+        review bots, refactoring tools, LLM coding agents, and more.
+      </>
+    ),
+  },
+  {
+    title: 'Extensible schemas',
+    description: (
+      <>
+        Define your own predicates to capture domain-specific facts about your
+        language or codebase.
+      </>
+    ),
   },
 ];
 
@@ -76,6 +118,48 @@ function Home() {
         </div>
       </header>
       <main>
+        <section className={styles.intro}>
+          <div className="container padding-vert--xl">
+            <h2 className="text--center">What is Glean?</h2>
+            <p className={styles.introText}>
+              <strong>Glean</strong> is an open-source code indexing system that
+              stores typed, schema-defined facts about source code in a
+              queryable database. Facts cover definitions, references, types,
+              call relationships, inheritance, imports, and more. Facts can be
+              queried with Angle, a Datalog-style query language. They are
+              produced by indexers for languages including C++, Hack, Python,
+              Haskell, and Flow, plus LSIF/SCIP support for Go, Java, Rust, and
+              TypeScript.
+            </p>
+            <p className={styles.introText}>
+              Use Glean when you need <em>precise, semantic</em> answers about
+              code rather than text-based guesses. Typical questions Glean
+              answers directly:
+            </p>
+            <ul className={styles.introText}>
+              <li>
+                <em>“Where is this symbol defined?”</em>
+              </li>
+              <li>
+                <em>“Who calls this function?”</em>
+              </li>
+              <li>
+                <em>“What implements this interface?”</em>
+              </li>
+              <li>
+                <em>“What does this type alias resolve to?”</em>
+              </li>
+              <li>
+                <em>“What are the transitive dependencies of this module?”</em>
+              </li>
+            </ul>
+            <p className={styles.introText}>
+              Coding agents, IDEs, and developer tools query Glean instead of
+              relying on grep when they need accuracy, cross-file/cross-language
+              reasoning, or large-scale code analysis.
+            </p>
+          </div>
+        </section>
         <div className="container padding-vert--xl text--left">
           <div className="row">
             <div className="col">
@@ -99,6 +183,37 @@ function Home() {
             </div>
           </div>
         </div>
+        <section className={styles.usecases}>
+          <div className="container padding-vert--xl">
+            <h2 className="text--center">When to use Glean</h2>
+            <ul className={styles.usecaseList}>
+              <li>
+                <strong>Code navigation:</strong> jump-to-definition, find
+                references, call hierarchy, type hierarchy.
+              </li>
+              <li>
+                <strong>Refactoring &amp; migrations:</strong> find every
+                callsite, every implementer, every override across a monorepo.
+              </li>
+              <li>
+                <strong>Code search agents &amp; LLMs:</strong> ground answers
+                in real symbol relationships instead of grep heuristics.
+              </li>
+              <li>
+                <strong>Dependency analysis:</strong> module/file/symbol-level
+                dependency graphs and impact analysis.
+              </li>
+              <li>
+                <strong>Code review automation:</strong> reason about what a
+                change actually affects.
+              </li>
+              <li>
+                <strong>Custom code intelligence:</strong> build new tools on
+                top of a uniform, language-agnostic fact store.
+              </li>
+            </ul>
+          </div>
+        </section>
       </main>
     </Layout>
   );

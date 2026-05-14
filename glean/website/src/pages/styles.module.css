@@ -43,3 +43,29 @@
   height: 200px;
   width: 200px;
 }
+
+.intro {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.introText {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 880px;
+  margin: 0 auto 1rem;
+}
+
+.usecases {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.usecaseList {
+  max-width: 880px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.usecaseList li {
+  margin-bottom: 0.5rem;
+}
