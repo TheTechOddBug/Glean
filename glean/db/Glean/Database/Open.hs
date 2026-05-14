@@ -29,6 +29,7 @@ import Control.Monad.Extra
 import Data.ByteString (ByteString)
 import Data.HashMap.Strict (HashMap)
 import qualified Data.HashMap.Strict as HashMap
+import qualified Data.Map as Map
 import Data.IORef
 import Data.Maybe
 import Data.Set (Set)
@@ -49,7 +50,7 @@ import Glean.Database.Data
 import Glean.Database.Exception
 import Glean.Database.Repo
 import Glean.Database.Storage as Storage
-import Glean.Database.Meta (Meta(..))
+import Glean.Database.Meta (Meta(..), ACLMode(..))
 import Glean.Database.Schema
 import Glean.Database.Schema.Types
 import Glean.Database.Types
@@ -534,6 +535,9 @@ asyncOpenDB env@Env{..} storage db@DB{..} version mode deps
               , odbIdleSince = idle
               , odbBaseSlices = maybeSlices
               , odbOwnership = ownership
+              , odbACLMode = ACLDisabled
+              , odbACLMapping = Map.empty
+              , odbFirstACLID = Nothing
               }
           atomically $ writeTVar dbState $ Open odb
           enqueueBatchDescriptorsFromDatabase env db odb

@@ -22,10 +22,18 @@ module Glean.Database.Meta
   , utcTimeToPosixEpochTime
   , posixEpochTimeToUTCTime
   , posixEpochTimeToTime
+  -- ACL mode detection from database properties
+  , ACLMode(..)
+  , getACLMode
+  , showACLMode
+  , isACLEnabled
+  , isACLEnforced
+  , isACLPermissive
   ) where
 
 import qualified Data.ByteString.Char8 as B
 import Data.Functor
+import qualified Data.HashMap.Strict as HashMap
 import Data.Map (Map)
 import qualified Data.Map as Map
 import Data.Maybe
@@ -137,3 +145,41 @@ posixEpochTimeToUTCTime = toUTCTime . posixEpochTimeToTime
 
 posixEpochTimeToTime :: PosixEpochTime -> Time
 posixEpochTimeToTime = Time . fromIntegral . unPosixEpochTime
+
+-- | ACL mode for database operations
+data ACLMode
+  = ACLDisabled     -- ^ ACLs are disabled (no glean.acl property)
+  | ACLActive       -- ^ Basic ACL support (glean.acl = "enabled")
+  | ACLEnforced     -- ^ Strict mode (error on facts without units)
+  | ACLPermissive   -- ^ Permissive mode (no directory inheritance)
+  | ACLBroken       -- ^ ACL property set but column family is missing/broken
+  deriving (Eq, Show)
+
+-- | Convert ACL mode to a human-readable description for logging
+showACLMode :: ACLMode -> String
+showACLMode ACLDisabled = "ACL: disabled"
+showACLMode ACLActive = "ACL: active"
+showACLMode ACLEnforced = "ACL: enforced (strict mode)"
+showACLMode ACLPermissive = "ACL: permissive (no directory inheritance)"
+showACLMode ACLBroken = "ACL: missing (column family not yet written)"
+
+-- | Get the ACL mode from database properties
+getACLMode :: DatabaseProperties -> ACLMode
+getACLMode props = case HashMap.lookup "glean.acl" props of
+  Just "enabled" -> ACLActive
+  Just "enforced" -> ACLEnforced
+  Just "permissive" -> ACLPermissive
+  Just "broken" -> ACLBroken
+  _ -> ACLDisabled
+
+-- | Check if ACLs are enabled (any mode except disabled)
+isACLEnabled :: DatabaseProperties -> Bool
+isACLEnabled props = getACLMode props /= ACLDisabled
+
+-- | Check if ACLs are in enforced mode
+isACLEnforced :: DatabaseProperties -> Bool
+isACLEnforced props = getACLMode props == ACLEnforced
+
+-- | Check if ACLs are in permissive mode
+isACLPermissive :: DatabaseProperties -> Bool
+isACLPermissive props = getACLMode props == ACLPermissive

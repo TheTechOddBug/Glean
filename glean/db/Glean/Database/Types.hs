@@ -30,6 +30,7 @@ import Data.HashMap.Strict (HashMap)
 import qualified Data.HashMap.Strict as HashMap
 import Data.HashSet (HashSet)
 import Data.IORef (IORef)
+import Data.Map (Map)
 import Data.Maybe
 import Data.Text (Text)
 import qualified Data.Text as Text
@@ -57,7 +58,7 @@ import Glean.Logger.Database (GleanDatabaseLogger)
 import Glean.RTS.Foreign.FactSet (FactSet)
 import Glean.RTS.Foreign.LookupCache (LookupCache)
 import qualified Glean.RTS.Foreign.LookupCache as LookupCache
-import Glean.RTS.Foreign.Ownership (Ownership, Slice, DefineOwnership)
+import Glean.RTS.Foreign.Ownership (Ownership, Slice, DefineOwnership, UsetId)
 import Glean.RTS.Foreign.Subst (Subst)
 import Glean.RTS.Types (Fid(..))
 import qualified Glean.ServerConfig.Types as ServerConfig
@@ -113,6 +114,15 @@ data OpenDB = OpenDB
 
     -- ownership data from the DB
   , odbOwnership :: TVar (Maybe Ownership)
+
+    -- The ACL mode for this database (cached from metaProperties)
+  , odbACLMode :: ACLMode
+
+    -- ACL name-to-ID mapping for resolving group names at query time
+  , odbACLMapping :: Map Text UsetId
+
+    -- Boundary between regular ownership USetIDs and ACL USetIDs
+  , odbFirstACLID :: Maybe UsetId
   }
 
 -- State of a databases
