@@ -200,7 +200,7 @@ makeFakeDB schema root repo dbtime completeness opts = do
     (Storage.open
       storage
       repo
-      (Storage.Create lowestFid Nothing Storage.UseDefaultSchema)
+      (Storage.Create lowestFid Nothing Storage.UseDefaultSchema Nothing)
       (Storage.currentVersion storage))
     Storage.close
     (\hdl -> storeSchema hdl $ toStoredSchema schema)
@@ -222,7 +222,7 @@ makeFakeCloudDB schema backupDir repo dbtime completeness opts = do
     (Storage.open
       storage
       repo
-      (Storage.Create lowestFid Nothing Storage.UseDefaultSchema)
+      (Storage.Create lowestFid Nothing Storage.UseDefaultSchema Nothing)
       (Storage.currentVersion storage))
     Storage.close
     (\hdl -> do

@@ -12,8 +12,8 @@ module Glean.Database.Storage.DB (
   ) where
 
 import Control.Monad
-import qualified Data.HashMap.Strict as HashMap
 import Data.Int
+import qualified Data.HashMap.Strict as HashMap
 import Data.List (unzip4)
 import qualified Data.Vector.Storable as VS
 import Data.Word

@@ -64,6 +64,7 @@ data Mode
       Fid  -- starting fact id
       (Maybe Ownership)  -- base DB ownership
       CreateSchema
+      (Maybe Text)  -- inherited GUID from base DB
 
 -- | Raw ownership data for axiomatic (non-derived) facts: a mapping
 -- from unit name to ranges of fact IDs.

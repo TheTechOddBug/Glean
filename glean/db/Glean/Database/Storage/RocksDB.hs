@@ -114,7 +114,7 @@ instance Storage RocksDB where
     (cmode, start, ownership) <- case mode of
       ReadOnly -> return (0, invalidFid, Nothing)
       ReadWrite -> return (1, invalidFid, Nothing)
-      Create start ownership _ -> do
+      Create start ownership _ _ -> do
         createDirectoryIfMissing True path
         return (2, start, ownership)
     withCString path $ \cpath ->

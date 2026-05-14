@@ -50,7 +50,7 @@ instance Storage Memory where
   readableVersions _ = [DBVersion 0]
   writableVersions _ = [DBVersion 0]
 
-  open (Memory v) repo (Create start _unit _) _ = do
+  open (Memory v) repo (Create start _unit _ _) _ = do
     facts <- FactSet.new start
     atomically $ do
       dbs <- readTVar v

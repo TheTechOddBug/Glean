@@ -71,8 +71,8 @@ kickOffDatabase env@Env{..} kickOff@Thrift.KickOff{..}
 
       (mode, kickOff_dependencies') <- case kickOff_dependencies of
         Nothing -> return
-          (Storage.Create lowestFid Nothing schemaToUse
-          , kickOff_dependencies)
+          (Storage.Create lowestFid Nothing schemaToUse Nothing
+           , kickOff_dependencies)
         Just (Dependencies_stacked stacked) -> do
             let Thrift.Stacked{..} = stacked
                 repo = Thrift.Repo stacked_name stacked_hash
@@ -215,7 +215,8 @@ stackedCreate env@Env{..} base KickOff{..} schemaToUse =
       | Storage.UseDefaultSchema <- schemaToUse,
         not kickOff_update_schema_for_stacked -> do
         return (
-          Storage.Create start ownership (Storage.UseThisSchema storedSchema),
+          Storage.Create start ownership
+            (Storage.UseThisSchema storedSchema) guid,
           guid
           )
 
@@ -260,7 +261,7 @@ stackedCreate env@Env{..} base KickOff{..} schemaToUse =
               "update_schema_for_stacked specified, but schemas are " <>
               "incompatible: " <> Text.intercalate ", " errors
 
-        return (Storage.Create start ownership chooseSchema, guid)
+        return (Storage.Create start ownership chooseSchema guid, guid)
 
 serverProperties :: IO DatabaseProperties
 serverProperties = return (HashMap.fromList rev)

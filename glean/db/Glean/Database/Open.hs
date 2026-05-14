@@ -309,7 +309,7 @@ setupSchema
   -> db
   -> Mode
   -> IO DbSchema
-setupSchema Env{..} _ handle (Create _ _ initial) = do
+setupSchema Env{..} _ handle (Create _ _ initial _) = do
   schema <- Observed.get envSchemaSource
   dbSchema <- case initial of
     UseDefaultSchema ->

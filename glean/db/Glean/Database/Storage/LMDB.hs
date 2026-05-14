@@ -85,7 +85,7 @@ instance Storage LMDB where
             callProcess "squashfuse_ll" [squash, path]
         return (0, invalidFid, Nothing)
       ReadWrite -> return (1, invalidFid, Nothing)
-      Create start ownership _ -> do
+      Create start ownership _ _ -> do
         createDirectoryIfMissing True path
         return (2, start, ownership)
     withCString path $ \cpath ->
@@ -187,7 +187,6 @@ instance DatabaseOps (Database LMDB) where
           map Text.unpack (ServerConfig.config_db_lmdb_mksquashfs_args cfg)
         size <- getFileSize out
         process out (Data $ fromIntegral size)
-
 
 foreign import ccall safe glean_lmdb_container_open
   :: CString
