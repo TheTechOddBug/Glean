@@ -52,6 +52,10 @@ instance Search (ResultLocation Erlang.Entity) where
         searchSymbolId toks $ searchVarByKey name module_ app spanStart
     | ["var", _app, _module, name, _spanStart] <- toks =
         searchSymbolId toks $ searchByNameAndKind "var" name
+    | ["func", _app, module_, name, arity] <- toks
+    , Just arityNum <- readMaybe $ unpack arity =
+        searchSymbolId toks $ searchByFQN module_ name arityNum
+    -- Legacy patterns (no leading tag)
     | [_app, module_, name, arity] <- toks
     , Just arityNum <- readMaybe $ unpack arity =
         searchSymbolId toks $ searchByFQN module_ name arityNum

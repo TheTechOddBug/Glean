@@ -54,7 +54,7 @@ instance Symbol Erlang.Declaration where
 instance Symbol Erlang.FunctionDeclaration_key where
   toSymbol (Erlang.FunctionDeclaration_key fqn app) =
     do base <- toSymbol fqn
-       return $ appTok app ++ base
+       return $ ["func"] ++ appTok app ++ base
 
 instance Symbol Erlang.MacroDeclaration_key where
   toSymbol (Erlang.MacroDeclaration_key name arity module_ app) =
