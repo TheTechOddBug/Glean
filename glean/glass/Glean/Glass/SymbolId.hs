@@ -65,7 +65,7 @@ import Glean.Glass.Types as Glass
 import Glean ( getId )
 import Glean.Angle ( alt, asPredicate, factId, Angle )
 import qualified Glean.Haxl.Repos as Glean
-import Glean.Util.ToAngle ( ToAngle(toAngle) )
+import Glean.Util.ToAngle ( ToAngle(toAngle), mkKey )
 
 import Glean.Glass.SymbolId.Class
     ( Symbol(..),
@@ -99,6 +99,7 @@ import qualified Glean.Schema.CodeScip.Types as Scip
 
 import Glean.Schema.CodeErlang.Types as Erlang
     ( Entity(Entity_decl, Entity_macro_usage, Entity_var_) )
+import Glean.Schema.CodeChef.Types as Chef ( Entity(Entity_symbol) )
 import Glean.Schema.CodeHack.Types as Hack ( Entity(Entity_decl) )
 import Glean.Schema.CodeJava.Types as Java ( Entity(Entity_decl) )
 import Glean.Schema.CodeKotlin.Types as Kotlin ( Entity(Entity_decl) )
@@ -415,6 +416,8 @@ entityToAngle e = case e of
     alt @"graphql" (toAngle x)
   Code.Entity_buck x -> Right $
     alt @"buck" (toAngle x)
+  Code.Entity_chef (Chef.Entity_symbol x) -> Right $
+    alt @"chef" (alt @"symbol" (mkKey x))
   Code.Entity_java (Java.Entity_decl x) -> Right $
     alt @"java" (alt @"decl" (toAngle x))
   Code.Entity_kotlin (Kotlin.Entity_decl x) -> Right $

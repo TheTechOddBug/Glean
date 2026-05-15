@@ -4,6 +4,7 @@ schema search.code.16 {
 
 import buck.4
 import code.24
+import code.chef
 import code.cxx
 import code.hack
 import code.java
@@ -23,6 +24,7 @@ import lsif
 import pp1
 import python
 import search.anglelang
+import search.chef
 import search.cxx
 import search.erlang.4
 import search.flow
@@ -1206,6 +1208,7 @@ schema search.code.17 {
 
 import buck.4
 import code.25
+import code.chef
 import code.cxx
 import code.hack
 import code.java
@@ -1225,6 +1228,7 @@ import lsif
 import pp1
 import python
 import search.anglelang
+import search.chef
 import search.cxx
 import search.erlang.5
 import search.flow
@@ -1259,7 +1263,8 @@ predicate SearchByNameAndLanguage:
     ( Buck = Language; BuckSearchByName { Name, Entity } ) |
     ( CSharp = Language; CSharpSearchByName { Name, Entity } ) |
     ( GraphQL = Language; GraphQLSearchByName { Name, Entity } ) |
-    ( Angle = Language; AngleSearchByName { Name, Entity } );
+    ( Angle = Language; AngleSearchByName { Name, Entity } ) |
+    ( Chef = Language; ChefSearchByName { Name, Entity } );
     code.EntityLanguage { Entity, Language }; # double check the entity lang
 
 # DEPRECATED: global symbol search normalized to lower case
@@ -2296,6 +2301,14 @@ predicate BuckSearchByName:
   { NameStr, Entity } where
     LocalName = buck.LocalName NameStr;
     BuckSearchByLocalNameFact { LocalName, Entity }
+
+predicate ChefSearchByName:
+  {
+    name: string,
+    entity: code.Entity,
+  }
+  { Name, { chef = E } } where
+    search.chef.SearchByName { name = Name, entity = E }
 
 predicate BuckSearchByLowerCaseName:
   {

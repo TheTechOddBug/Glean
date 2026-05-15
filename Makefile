@@ -232,6 +232,7 @@ SCHEMAS= \
 	python \
 	scip \
 	search_anglelang \
+	search_chef \
 	search_code \
 	search_cxx \
 	search_erlang \

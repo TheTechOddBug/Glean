@@ -28,6 +28,7 @@ import Glean.Glass.Search.Class as Search
       mapResultLocation)
 import qualified Glean.Glass.Search.Angle ({- instances -})
 import qualified Glean.Glass.Search.Buck ({- instances -})
+import qualified Glean.Glass.Search.Chef ({- instances -})
 import qualified Glean.Glass.Search.Cxx ({- instances -})
 import qualified Glean.Glass.Search.Erlang ({- instances -})
 import qualified Glean.Glass.Search.Flow ({- instances -})
@@ -68,6 +69,8 @@ searchEntityLocation lang toks = case lang of
     fmap (mapResultLocation Code.Entity_angle) <$> Search.symbolSearch toks
   Language_Buck ->
     fmap (mapResultLocation Code.Entity_buck) <$> Search.symbolSearch toks
+  Language_Chef ->
+    fmap (mapResultLocation Code.Entity_chef) <$> Search.symbolSearch toks
   Language_Cpp ->
     fmap (mapResultLocation Code.Entity_cxx) <$> Search.symbolSearch toks
   Language_Erlang ->

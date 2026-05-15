@@ -12,6 +12,7 @@ module Glean.Util.ToAngle
   , ToAngleFull(..)
   , Normalize(..)
   , Prune(..)
+  , mkKey
   ) where
 
 import Glean

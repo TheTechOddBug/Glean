@@ -915,6 +915,7 @@ library schema
         Glean.Schema.Python
         Glean.Schema.SearchAnglelang
         Glean.Schema.SearchBuck
+        Glean.Schema.SearchChef
         Glean.Schema.SearchCode
         Glean.Schema.SearchCxx
         Glean.Schema.SearchErlang
@@ -987,6 +988,7 @@ library schema
         Glean.Schema.Python.Types
         Glean.Schema.SearchAnglelang.Types
         Glean.Schema.SearchBuck.Types
+        Glean.Schema.SearchChef.Types
         Glean.Schema.SearchCode.Types
         Glean.Schema.SearchCxx.Types
         Glean.Schema.SearchErlang.Types
@@ -1489,6 +1491,7 @@ library glass-lib
         Glean.Glass.Search
         Glean.Glass.Search.Angle
         Glean.Glass.Search.Buck
+        Glean.Glass.Search.Chef
         Glean.Glass.Search.Class
         Glean.Glass.Search.Cxx
         Glean.Glass.Search.Erlang
