@@ -410,6 +410,20 @@ predicate VarLocation :
     span : src.ByteSpan,
   }
 
+# Exact variable location index keyed by file/span start + name.
+predicate VarsByFileStart :
+  {
+    file : src.File,
+    span_start : nat,
+    name : string,
+    span : src.ByteSpan,
+    var_ : VarDeclaration,
+  }
+  stored { File, Start, Name, Span, Var } where
+  VarLocation { var_ = Var, file = File, span = Span };
+  { start = Start } = Span;
+  erlang.VarDeclaration { name = Name } = Var
+
 # Bulk file index: one fact per file with all declarations.
 # Outline queries join FileDeclarations with DeclarationLocation for spans.
 predicate FileDeclarations :

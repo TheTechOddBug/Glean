@@ -500,9 +500,6 @@
           "key": {
             "app": "app_a",
             "arity": 1,
-            "content_hash": "7323829409885166836",
-            "expansion": "```erlang\u000a{\u000a    ok,\u000a    {\u000a        Id,\u000a        Payload\u000a    }\u000a}\u000a```",
-            "links": [ ],
             "module": "shared.hrl",
             "name": "TRANSFORM"
           }
@@ -535,9 +532,6 @@
         "macro_usage": {
           "key": {
             "app": "app_a",
-            "content_hash": "5558081704974656472",
-            "expansion": "```erlang\u000a3\u000a```",
-            "links": [ ],
             "module": "shared.hrl",
             "name": "MAX_RETRIES"
           }
@@ -746,8 +740,7 @@
             "app": "app_a",
             "module": "utils",
             "name": "Id",
-            "span_start": 143,
-            "type_text": "Id :: number()"
+            "span_start": 143
           }
         }
       }
@@ -763,8 +756,7 @@
             "app": "app_a",
             "module": "utils",
             "name": "Id",
-            "span_start": 143,
-            "type_text": "Id :: number()"
+            "span_start": 143
           }
         }
       }
@@ -1196,8 +1188,7 @@
             "app": "app_b",
             "module": "internal",
             "name": "C",
-            "span_start": 251,
-            "type_text": "C :: term()"
+            "span_start": 251
           }
         }
       }
@@ -1213,8 +1204,7 @@
             "app": "app_b",
             "module": "internal",
             "name": "C",
-            "span_start": 251,
-            "type_text": "C :: term()"
+            "span_start": 251
           }
         }
       }
@@ -1248,8 +1238,7 @@
             "app": "app_b",
             "module": "internal",
             "name": "Id",
-            "span_start": 126,
-            "type_text": "Id :: erlang:string()"
+            "span_start": 126
           }
         }
       }
@@ -1265,8 +1254,7 @@
             "app": "app_b",
             "module": "internal",
             "name": "Id",
-            "span_start": 126,
-            "type_text": "Id :: erlang:string()"
+            "span_start": 126
           }
         }
       }
@@ -1282,8 +1270,7 @@
             "app": "app_b",
             "module": "internal",
             "name": "Req",
-            "span_start": 76,
-            "type_text": "Req :: #request{}"
+            "span_start": 76
           }
         }
       }
@@ -1299,8 +1286,7 @@
             "app": "app_b",
             "module": "internal",
             "name": "Req",
-            "span_start": 76,
-            "type_text": "Req :: #request{}"
+            "span_start": 76
           }
         }
       }
@@ -1347,8 +1333,7 @@
             "app": "app_b",
             "module": "internal",
             "name": "Filtered",
-            "span_start": 223,
-            "type_text": "Filtered :: [term()]"
+            "span_start": 223
           }
         }
       }
@@ -1364,8 +1349,7 @@
             "app": "app_b",
             "module": "internal",
             "name": "Filtered",
-            "span_start": 223,
-            "type_text": "Filtered :: [term()]"
+            "span_start": 223
           }
         }
       }
@@ -1381,8 +1365,7 @@
             "app": "app_b",
             "module": "internal",
             "name": "Formatted",
-            "span_start": 157,
-            "type_text": "Formatted :: [number()]"
+            "span_start": 157
           }
         }
       }
@@ -1398,8 +1381,7 @@
             "app": "app_b",
             "module": "internal",
             "name": "Formatted",
-            "span_start": 157,
-            "type_text": "Formatted :: [number()]"
+            "span_start": 157
           }
         }
       }
@@ -1430,9 +1412,6 @@
         "macro_usage": {
           "key": {
             "app": "app_a",
-            "content_hash": "5558081704974656472",
-            "expansion": "```erlang\u000a3\u000a```",
-            "links": [ ],
             "module": "shared.hrl",
             "name": "MAX_RETRIES"
           }
